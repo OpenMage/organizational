@@ -1,0 +1,2056 @@
+[
+    [
+        {
+            "commit_hash": "e9a3a2714c330b1e6069fc28f0035857c637ed36",
+            "message": "Do not register shutdown function unless saveBeforeDestruct functionality is actually needed. (#835)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "7033494668c19e8cc2060922864b8bdef54061df"
+        },
+        {
+            "commit_hash": "7033494668c19e8cc2060922864b8bdef54061df",
+            "message": "Fix email\/admin_new_user_notification template (#827)\n\n* Fix email\/admin_new_user_notification template\n\nFix Decoding failed: Syntax error\nSomeone missed a } in the template @vars header\n\nThis should allow users to load this template in the \"System -> Transactional Emails\" area.\n\n* Update Mage_Core.csv\n\nadded \"New Admin User Email Template\" label\n\n* Add system field\n\nAdd admin_notification_email_template system field, so an admin can choose a transactional email when enabling\nSystem -> Configuration -> Advanced -> Admin -> Security -> New Admin User Create Notification",
+            "author_name": "Micky Socaci",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "c907769b9f697bd5101f1f71c7a0bf11f5cd9584"
+        },
+        {
+            "commit_hash": "c907769b9f697bd5101f1f71c7a0bf11f5cd9584",
+            "message": "disable url rewrite check for admin store (#838)",
+            "author_name": "M*a^r;c R+o,m:a-n.o",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "71cb9ccf9b791dcef35079a60b5d8a61c027af58"
+        },
+        {
+            "commit_hash": "71cb9ccf9b791dcef35079a60b5d8a61c027af58",
+            "message": "fix typo of PR (#834)\n\nfor defense, the TravisCI did not run for the PullRequest",
+            "author_name": "Daniel Fahlke",
+            "commiter_name": "GitHub",
+            "parent_hashes": "bc1cecaa7fdd0660a95eb03fba0abf47c1dc67b7"
+        },
+        {
+            "commit_hash": "bc1cecaa7fdd0660a95eb03fba0abf47c1dc67b7",
+            "message": "fix missing semicolon of PR (#834)",
+            "author_name": "Daniel Fahlke",
+            "commiter_name": "GitHub",
+            "parent_hashes": "0205ecbc7dc77e95fca39fbc9101af4fdaa6108f"
+        },
+        {
+            "commit_hash": "0205ecbc7dc77e95fca39fbc9101af4fdaa6108f",
+            "message": "Suggested fix to make $quote->getItemById more robust (#834)\n\n* Suggested fix to make $quote->getItemById more robust\n\nSeveral new quote and order flows do not always trigger and set the quoteid ... the quote is then created with items but has no id yet ...  and getItemById () does not work in these case because there is a different key. This happens for instance when orders are created via\n\n            \/** @var Mage_Sales_Model_Service_Quote $service *\/\n            $service = Mage::getModel('sales\/service_quote', $quote);\n            $service->submitAll();\n\nPlease review and UPDATE my code suggestion directly. Needs a proper review as it is quite in the core of quotes of M1\n\n* Small fix",
+            "author_name": "SNH_NL",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "0e90e98e89b44032645824da48720cf1e63211de"
+        },
+        {
+            "commit_hash": "0e90e98e89b44032645824da48720cf1e63211de",
+            "message": "fix(oauth): sort parameters in a standard way as per the specs (#721)\n\nthe signature is now calculated a bit differently to match other\nimplementations.\n\nBREAKING CHANGE: existing OAuth applications may encounter some issues\nleading to `invalid_signature` 401 errors from Magento due to the\nremoval of natural sorting for parameters when generating the signature",
+            "author_name": "Pierre Martin",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "9648b1e7fe803d6fb9622af70935102b3a282c2d"
+        },
+        {
+            "commit_hash": "9648b1e7fe803d6fb9622af70935102b3a282c2d",
+            "message": "Fix performance issue with bruteforce search in review observer (#840)\n\nThe current observer does a brute-force search to find a current summary related to a product in the collection. It becomes visible when you show 1000 products on a page and increases exponentially with the increased size of product collection. \nFix replaces brute force search (O(n^m)) with a hash map lookup (O(n))",
+            "author_name": "Ivan Chepurnyi",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "8bee1ac0086cba365d2a442f2c5d95c44f0734b0"
+        },
+        {
+            "commit_hash": "8bee1ac0086cba365d2a442f2c5d95c44f0734b0",
+            "message": "Respecting csv file delimiter in file upload for M1 1.9.4.3 (#846)\n\nAdded ability to respect the file delimiter in import functionality. This relates to the PRODSECBUG-2462",
+            "author_name": "Andreas Pointner",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "cce46fced84e2e61d20fa7227b80f1f652df538a"
+        },
+        {
+            "commit_hash": "3e0922ffe4a68b04c263665de58c07e81777909a",
+            "message": "reset session saved parameters on failure (#823)",
+            "author_name": "spinsch",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "d63940cdc396d4bc94c9d1b90b8c34f2bc8b1e90"
+        },
+        {
+            "commit_hash": "99b772f94de693228a787d69254911e060934cf1",
+            "message": "Updated to Magento 1.9.4.3",
+            "author_name": "bschrenk",
+            "commiter_name": "bschrenk",
+            "parent_hashes": "e6078ab521997f91cf67dfc540902771d020b53c"
+        },
+        {
+            "commit_hash": "d63940cdc396d4bc94c9d1b90b8c34f2bc8b1e90",
+            "message": "Solve #818 - add var to variable assignment (#819)",
+            "author_name": "Lucas van Staden",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "156e3be5b4cbc25535c09ac20a3caac46a90fbcf"
+        },
+        {
+            "commit_hash": "156e3be5b4cbc25535c09ac20a3caac46a90fbcf",
+            "message": "Only validate file extension once. (#652)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "7443158c5af75c7c06cee5073f93941d0efc37c7"
+        },
+        {
+            "commit_hash": "7443158c5af75c7c06cee5073f93941d0efc37c7",
+            "message": "Fix unused variables in Backend Crons (#737)\n\n* Fix unused variables in Backend Crons\n\n* Update doc",
+            "author_name": "Lubo\u0161",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "c6db73efe0a9b161bca377bfe5ee23cdac2c744b"
+        },
+        {
+            "commit_hash": "a75bc36f76b82a38edc177c87c7f3cce86e53ad4",
+            "message": "add composer.json",
+            "author_name": "IOWEB TECHNOLOGIES",
+            "commiter_name": "IOWEB TECHNOLOGIES",
+            "parent_hashes": "b7e8ed9b46cd3b728ea9838f61d4798046d2ca1a"
+        },
+        {
+            "commit_hash": "538cbfee518c824d7c0e22c68af546418a0c03f8",
+            "message": "Adding backwards compatibility with some 3rd party modules that use the XML_USE_HTTPS_PATH const. (#800)\n\n* Forcing HTTPS\n\n* Misc revisions\n\n* Removing scheme var\n\n* Adding backwards compatibility with some 3rd party modules that use the XML_USE_HTTPS_PATH const.",
+            "author_name": "Mark Lewis",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "94545dd69f9b036fc76815d43cb9a3fd0c1d42ba"
+        },
+        {
+            "commit_hash": "94545dd69f9b036fc76815d43cb9a3fd0c1d42ba",
+            "message": "Fix variable name in getOptionText (#732)",
+            "author_name": "sv3n",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "109019c96cc245bf0567e35a2d3814e74afaf56b"
+        },
+        {
+            "commit_hash": "7ddda6dcb5951c094a67d506435e6109f641951c",
+            "message": "[PORT] Get cookie restriction block for current store, see #607 (#672)",
+            "author_name": "sv3n",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "d1337dc690b9de69a9a06f7658d40bb3e7912035"
+        },
+        {
+            "commit_hash": "4c908d2daaef9eb88c61cf96061567a0d9f5234f",
+            "message": "Update shipping.phtml\n\nWrong translation field fix",
+            "author_name": "drago-aca",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "f852328e4f0817539d40edcac1646073c16cca6b"
+        },
+        {
+            "commit_hash": "d1337dc690b9de69a9a06f7658d40bb3e7912035",
+            "message": "Fixed typos",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "4d7fa00879f1bff6db779b0f48df6e44f1f11bbf"
+        },
+        {
+            "commit_hash": "4d7fa00879f1bff6db779b0f48df6e44f1f11bbf",
+            "message": "Force HTTPS for Admin Notifications (#799)\n\n* Forcing HTTPS",
+            "author_name": "Mark Lewis",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "5e4058a4172d24a131711d7b821dad9d946b894d"
+        },
+        {
+            "commit_hash": "5e4058a4172d24a131711d7b821dad9d946b894d",
+            "message": "Update config.xml (#796)",
+            "author_name": "Mark Lewis",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "72b199d25505133c562542ab46e9597195ca7cb4"
+        },
+        {
+            "commit_hash": "72b199d25505133c562542ab46e9597195ca7cb4",
+            "message": "Fixed currency convert exception (#790)",
+            "author_name": "Rafa\u0142 Do\u0142gopo\u0142",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "c4390ade23e43099e847f7993c14b8920f863a58"
+        },
+        {
+            "commit_hash": "c4390ade23e43099e847f7993c14b8920f863a58",
+            "message": "Fix typos in function documentations (#793)",
+            "author_name": "Pof Magicfingers",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "d03458b4101fec01ec84b9115e21bacda542ae15"
+        },
+        {
+            "commit_hash": "f852328e4f0817539d40edcac1646073c16cca6b",
+            "message": "Detect implicit rollback after deadlock or lock wait timeout. (#565)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "3db1bfc19853f7510280a1a409a40c17d7c37ad5"
+        },
+        {
+            "commit_hash": "6ac8db88a4dd84116639cebcd2603c53c1873c17",
+            "message": "Add calls to parent methods (Mage_Poll), closes #726 (#728)",
+            "author_name": "sv3n",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "ae1724828e9db27c9948ed420a8b2d97f1da4ad8"
+        },
+        {
+            "commit_hash": "ae1724828e9db27c9948ed420a8b2d97f1da4ad8",
+            "message": "Drop support for EOL PHP5 (#736)\n\n* Drop support for EOL PHP5\n\n* Updated .travis.yml",
+            "author_name": "sv3n",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "44adb243df3ca552e83d6d6b260c145e00d1d043"
+        },
+        {
+            "commit_hash": "44adb243df3ca552e83d6d6b260c145e00d1d043",
+            "message": "replaced deprecated php function - each() (#789)",
+            "author_name": "Jakub Hejtm\u00e1nek",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "d2dcce8e8c4db0cdf92b149025d12653484a4486"
+        },
+        {
+            "commit_hash": "d644768c998cf37c0f633482e8765e4e630457cc",
+            "message": "Updated to Magento 1.9.4.2\n\n+ downloaded latest release and merged into mainstream",
+            "author_name": "Jeroen Boersma",
+            "commiter_name": "Jeroen Boersma",
+            "parent_hashes": "f2fcb8ee03606043b39320560ae81b61dc4f75a9"
+        },
+        {
+            "commit_hash": "f306599b0840faa2b230af840f3c10638625ff6c",
+            "message": "Added missing config nodes, closes #609 #614 (#733)\n\n* Addedd missing config nodes, closes #609 #614\n\n* Fixed change in composer.json",
+            "author_name": "sv3n",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "33411227198362232867526eef723f21783d080c"
+        },
+        {
+            "commit_hash": "3db1bfc19853f7510280a1a409a40c17d7c37ad5",
+            "message": "Fixed ability to save config by a user with limited access (#496)\n\nRelated to configs that uses 'config_path' parameter only -\npayment config section for example.",
+            "author_name": "Vova Yatsyuk",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "097ef2d0a2e8f40f5d2a7850b5901a6d3a92c7c6"
+        },
+        {
+            "commit_hash": "097ef2d0a2e8f40f5d2a7850b5901a6d3a92c7c6",
+            "message": "#511 Improved skip-links delegation behaviour (#511)",
+            "author_name": "Rafael Patro",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "d4016e7f1b29a0990d7e844d68e4206880cf321d"
+        },
+        {
+            "commit_hash": "33411227198362232867526eef723f21783d080c",
+            "message": "Updated phpstorm meta files (#734)",
+            "author_name": "sv3n",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "a17e29ae3eda0ba964b58e9a5041850a893e4f51"
+        },
+        {
+            "commit_hash": "a17e29ae3eda0ba964b58e9a5041850a893e4f51",
+            "message": "Add Countable to implemented interfaces when appropriate",
+            "author_name": "FaustTobias",
+            "commiter_name": "sv3n",
+            "parent_hashes": "3e2f4993db648053938df4dc42da7cb0984fc54c"
+        },
+        {
+            "commit_hash": "3e2f4993db648053938df4dc42da7cb0984fc54c",
+            "message": "Call to protected function (#720)",
+            "author_name": "Lubo\u0161",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "5627aeb2f3f71273f0c58ceb03483904c027c8fb"
+        },
+        {
+            "commit_hash": "5627aeb2f3f71273f0c58ceb03483904c027c8fb",
+            "message": "Add _beforeLoadCollection() (#711)",
+            "author_name": "Lubo\u0161",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "47fd77a91b690757d132254319e0159416763379"
+        },
+        {
+            "commit_hash": "47fd77a91b690757d132254319e0159416763379",
+            "message": "Fix fatal error - getRegionCollection() - issue #713 (#718)",
+            "author_name": "Lubo\u0161",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "38c9644d9dedf5a54f2a457524131249d6051ea6"
+        },
+        {
+            "commit_hash": "38c9644d9dedf5a54f2a457524131249d6051ea6",
+            "message": "Fix double load at customer edit page in administration (#671)",
+            "author_name": "Lubo\u0161",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "99da6e70f868aa60086227a8c1fa9e877952318d"
+        },
+        {
+            "commit_hash": "99da6e70f868aa60086227a8c1fa9e877952318d",
+            "message": "Add class map and generator script for PhpStorm introspection. (#548)\n\n* Add .phpstorm.meta.php\/core.meta.php file for PhpStorm introspection and update README.\n\n* Exclude .phpstorm.meta.php directory from PHP linting task.\n\n* Switch to n98-magerun for generating PhpStorm map files.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "827f81f34b6958a648b58dde34948a4a2672933a"
+        },
+        {
+            "commit_hash": "827f81f34b6958a648b58dde34948a4a2672933a",
+            "message": "Fixed unexpectable behavior of getAttributeRawValue(), issue #658 (#664)\n\n* Fixed unexpectable behavior of getAttributeRawValue(), issue #658\n\n* Keep backcompatibility #658",
+            "author_name": "Milan Dav\u00eddek",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "d01a9168e2955bc89d24e6763644c57f2d0b44b6"
+        },
+        {
+            "commit_hash": "d01a9168e2955bc89d24e6763644c57f2d0b44b6",
+            "message": "Fix issue #667 (#668)\n\n* Fix issue #667\nWarning: md5() expects parameter 1 to be string, array given in app\/code\/core\/Mage\/Core\/Model\/Session\/Abstract\/Varien.php on line 152",
+            "author_name": "Kostadin A",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "9f9a99ba397e00c7471b2234ef1e61cc48d600f7"
+        },
+        {
+            "commit_hash": "d4016e7f1b29a0990d7e844d68e4206880cf321d",
+            "message": "Fix calculation of base total in magento report with discount (#555)\n\n* Fix calculation of base total in magento report with discount\n\nActually magento store discount with negative value :  - 10\n\nIf you have an order with subtotal = 90 and base_discount_invoiced = -10\n\nWhen Magento do base_subtotal_invoiced  - base_discount_invoiced => 90 -- 10 => 90 +10 => 100\n\n* Update fix\n\nI think it's clearer with ABS value, like magento do for the other columns",
+            "author_name": "kpitn",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "b559b6fc425ebafdb2fa4c5b2f949721c5ea3c30"
+        },
+        {
+            "commit_hash": "9f9a99ba397e00c7471b2234ef1e61cc48d600f7",
+            "message": "Allow 3rd-party applications to operate in get.php scope (#599)",
+            "author_name": "Eric Sean Turner",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "94d794f5eb3785b4cc82767f4f83db4e9d895152"
+        },
+        {
+            "commit_hash": "b559b6fc425ebafdb2fa4c5b2f949721c5ea3c30",
+            "message": "Allow 3rd-party applications to operate in get.php scope (#599)",
+            "author_name": "Eric Sean Turner",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "e45070ab064bf014a17afeb23c65cd9e52232a92"
+        },
+        {
+            "commit_hash": "94d794f5eb3785b4cc82767f4f83db4e9d895152",
+            "message": "[PORT] Fix missing customer email address on api created order, see #550 (#673)",
+            "author_name": "sv3n",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "82f4a40c52a17efb6eb0605e3dc1355f8ee6237d"
+        },
+        {
+            "commit_hash": "e45070ab064bf014a17afeb23c65cd9e52232a92",
+            "message": "fix missing customer email address on api created order",
+            "author_name": "spinsch",
+            "commiter_name": "sv3n",
+            "parent_hashes": "a200deefb6ba9e0b462806383c5b6115da232d00"
+        },
+        {
+            "commit_hash": "82f4a40c52a17efb6eb0605e3dc1355f8ee6237d",
+            "message": "Fix types in doc comments",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "sv3n",
+            "parent_hashes": "6c0c9b31262787558a0e283bc7f73670332054f3"
+        },
+        {
+            "commit_hash": "a200deefb6ba9e0b462806383c5b6115da232d00",
+            "message": "Get cookie restriction block for current store (#607)",
+            "author_name": "Julien Loizelet",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "cc06278211164ab3981a403fdf1d56d518cfd2da"
+        },
+        {
+            "commit_hash": "6c0c9b31262787558a0e283bc7f73670332054f3",
+            "message": "Load countries directory select by store (#628)",
+            "author_name": "Florent",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "fe897da816daeadbed281c293551cf2e353f518b"
+        },
+        {
+            "commit_hash": "fe897da816daeadbed281c293551cf2e353f518b",
+            "message": "Fix log file creation issue (#670)\n\n#651 \nhttps:\/\/gist.github.com\/piotrekkaminski\/0596cae2d25bf467edbd3d3f03ab9f8f",
+            "author_name": "SNH_NL",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "9163045eb0b5d3e3b247dffcf9d13b25fda4ed6f"
+        },
+        {
+            "commit_hash": "2291aa6477961a6bcbb68f15197f37e441b7a1d3",
+            "message": "maintain hash_equals first argument which shouldn't be NULL.\n\n!! here, function isResetPasswordLinkTokenExpired ( app\/code\/core\/Mage\/Adminhtml\/Helper\/Dashboard\/Data.php ) will take it and it should be first!!\nsomeone who know 'good patterns' can tell if it should be so or it should be like :\n        if (!isset($userToken) || !hash_equals($userToken, $resetPasswordLinkToken) || $user->isResetPasswordLinkTokenExpired()) {",
+            "author_name": "henrykb",
+            "commiter_name": "GitHub",
+            "parent_hashes": "9163045eb0b5d3e3b247dffcf9d13b25fda4ed6f"
+        },
+        {
+            "commit_hash": "9163045eb0b5d3e3b247dffcf9d13b25fda4ed6f",
+            "message": "Define frontend area and store in subscriber sends out email (#632)",
+            "author_name": "Florent",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "ec4afeb3364a0c8a1fa4a052557ea2375bf490fb"
+        },
+        {
+            "commit_hash": "ec4afeb3364a0c8a1fa4a052557ea2375bf490fb",
+            "message": "Fix for 'Fixed PHP Notice' to work without  defined. (#657)",
+            "author_name": "Stefan Jaroschek",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "ad136b858c24884221f298e81e7e4b9694bfd629"
+        },
+        {
+            "commit_hash": "ad136b858c24884221f298e81e7e4b9694bfd629",
+            "message": "Fix PHP Notice after re-connect since 'host' key is unset when using unix socket. (#610)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "97ca84b84fa5eff27468f3287d198949e73acce1"
+        },
+        {
+            "commit_hash": "97ca84b84fa5eff27468f3287d198949e73acce1",
+            "message": "Change wrong \"decimal\" doctype to \"float\" (#629)\n\nAlso fix few typos in the process.",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "492cdb5dc07a2bf30aaab7e04599e3575544475c"
+        },
+        {
+            "commit_hash": "cc06278211164ab3981a403fdf1d56d518cfd2da",
+            "message": "Sales_Order_Grids > Search By Customer First and Last Name Fixes (#578)\n\n* Sales_Order_Grids > Search By Customer First and Last Name Fixes\n\n* Changed to use trim replace on whole concat query, rather than targeted at a single line\n\n* Changed to use MYSQL trim replace\n\n* Removal of PHP TRIM REPLACE",
+            "author_name": "elfling",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "5056d17d035d405fdab22324f8498f09fb0b56a1"
+        },
+        {
+            "commit_hash": "5056d17d035d405fdab22324f8498f09fb0b56a1",
+            "message": "surpress array to string conversion (#605)\n\n* surpress array to string conversion\n\nsurpress array to string conversion\n\nnot sure about all the use cases here but (string) would only affect FALSE to be empty string \"\"\n\nall other variables woould be something else than an empty string\n\nfeedback welcome\n\n* Updated check",
+            "author_name": "SNH_NL",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "dbe8b3b754e3942e7707240bde54d18a327a241a"
+        },
+        {
+            "commit_hash": "dbe8b3b754e3942e7707240bde54d18a327a241a",
+            "message": "fixes magento 1.9.3.10 displays <br\/> in gallery (#596)\n\nKeeps the escapehtml() by adding a str_replace() to convert back just the <br\/> tag.",
+            "author_name": "Nicholas Graham",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "2825eab3cdbb1554c7f19d691ee260274c9f4c26"
+        },
+        {
+            "commit_hash": "b5c52503a0bd6dfc0d9c1bf154245c5c0112865f",
+            "message": "TravisCI allow failures, enable fast_finish (#641)",
+            "author_name": "Tom Lankhorst",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "77a837aba9166502378d3bb64920ccf5e862b95e"
+        },
+        {
+            "commit_hash": "fd01dd87bbf1428836271088f8639a5275a710b9",
+            "message": "Fix 1.9.4.0 merge issues (#602)\n\n* lib\/mcrypt_compat\/ should be lib\/mcryptcompat\/\n* add missing lib\/phpseclib\/PHP\/ folder\n\nrefs: #580",
+            "author_name": "Erik Dannenberg",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "4285a4901783adfb377c7c3d264f3507cb3be6ac"
+        },
+        {
+            "commit_hash": "4285a4901783adfb377c7c3d264f3507cb3be6ac",
+            "message": "Remove 'nightly' from PHP tests. (#642)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "418e9ffbb77de2377048a9a9d3d9c4b838c849ad"
+        },
+        {
+            "commit_hash": "418e9ffbb77de2377048a9a9d3d9c4b838c849ad",
+            "message": "Fix wrong types in doc comments part 2 (#633)",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "8d1d8e452f1da528c11b0bf9de8ef578dec92670"
+        },
+        {
+            "commit_hash": "8d1d8e452f1da528c11b0bf9de8ef578dec92670",
+            "message": "Fix undefined variable in Mage_Catalog_Model_Resource_Abstract (#635)",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "GitHub",
+            "parent_hashes": "2763efd39e58f1d3a960a66a04b2f48046abbaf4"
+        },
+        {
+            "commit_hash": "2763efd39e58f1d3a960a66a04b2f48046abbaf4",
+            "message": "Fix Undefined property: DOMDocumentType::$entities\n\nNotice: Undefined property: DOMDocumentType::$entities  in \/var\/www\/releases\/99\/pub\/app\/code\/core\/Zend\/Xml\/Security.php on line 110\n\nHappens only on CGI with PHP CLI(?) can only reproduce on one server.",
+            "author_name": "Fabian Blechschmidt",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "f1d7fde0b8d2037eb1ddf670cccba1296ea9aa1d"
+        },
+        {
+            "commit_hash": "f1d7fde0b8d2037eb1ddf670cccba1296ea9aa1d",
+            "message": "Fix unclosed div in product options template (#634)",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "b24415bc15745700fd5f3c115c9f81551cf71d85"
+        },
+        {
+            "commit_hash": "62fae32153d34cfae1377cbc18937def7ef8c501",
+            "message": "Update Magento 1.9.4.1 - real changes",
+            "author_name": "Fabian Blechschmidt",
+            "commiter_name": "Fabian Blechschmidt",
+            "parent_hashes": "1cc18d8a2839e44ee4512f0ee4b03db919c10bf4"
+        },
+        {
+            "commit_hash": "1cc18d8a2839e44ee4512f0ee4b03db919c10bf4",
+            "message": "Update Magento 1.9.4.1 - only copyright changes",
+            "author_name": "Fabian Blechschmidt",
+            "commiter_name": "Fabian Blechschmidt",
+            "parent_hashes": "fe6a94e281cb3e8e166f4eece31c4df1faa8cec6"
+        },
+        {
+            "commit_hash": "5ab9f13267e911af55ac79caf65aef2faa4ccc44",
+            "message": "Replace all `@return {self}` annotations for method chaining with `@return $this`.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "7f9cb1dff17f3110ffa676c3a35f96a5dfa8bfc4"
+        },
+        {
+            "commit_hash": "a6d3b90e840e4dd08fc16c12e8c076d56ef233a7",
+            "message": "Remove duplicated array key in Mage_Page_Block_Js_Translate",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "GitHub",
+            "parent_hashes": "7f9cb1dff17f3110ffa676c3a35f96a5dfa8bfc4"
+        },
+        {
+            "commit_hash": "7f9cb1dff17f3110ffa676c3a35f96a5dfa8bfc4",
+            "message": "Fix getExtra return type (#620)\n\ngetExtra is an array because resource model unserialize it",
+            "author_name": "Fr\u00e9d\u00e9ric MARTINEZ",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "4e64bde8a7bceee99854fb1ed13934a70c53f9a0"
+        },
+        {
+            "commit_hash": "2825eab3cdbb1554c7f19d691ee260274c9f4c26",
+            "message": "toGMTString is deprecated, changed to toUTCString (#542)",
+            "author_name": "Edwin",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "a567f09e0cc871c8466ad95aa956cabea697335b"
+        },
+        {
+            "commit_hash": "4e64bde8a7bceee99854fb1ed13934a70c53f9a0",
+            "message": "Add Countable interface\n\nFix https:\/\/github.com\/OpenMage\/magento-lts\/issues\/604#issuecomment-464527517",
+            "author_name": "seansan",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "daf983128b0922645520d0478143fa88fbc8db4b"
+        },
+        {
+            "commit_hash": "a567f09e0cc871c8466ad95aa956cabea697335b",
+            "message": "Remove whitespace from Fedex sandbox url (#612)\n\nRemove white space\nFixes #611",
+            "author_name": "Kevin",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "5137d4b5cb9e14146b5381c9d9b5756b20bc9be8"
+        },
+        {
+            "commit_hash": "5137d4b5cb9e14146b5381c9d9b5756b20bc9be8",
+            "message": "Make upgrade script compatible with PHP7. Fixes error (#615)\n\nuncaught Error: [] operator not supported for strings in app\/code\/core\/Mage\/Usa\/sql\/usa_setup\/upgrade-1.6.0.1-1.6.0.2.php:93",
+            "author_name": "elfling",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "c86cbd9dc410174eecabb930e3a68ed8bf027f3a"
+        },
+        {
+            "commit_hash": "daf983128b0922645520d0478143fa88fbc8db4b",
+            "message": "Prevent double firing events in Category_Flat_Collection (#598)\n\nThe events catalog_category_collection_load_after and catalog_category_collection_load_before\nare already fired in the parent class, so they can be removed from Mage_Catalog_Model_Resource_Category_Flat_Collection",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "6c8239f63e3ec61ef097d39499baa68c19131216"
+        },
+        {
+            "commit_hash": "c86cbd9dc410174eecabb930e3a68ed8bf027f3a",
+            "message": "Disable select-all for large collections. (#595)",
+            "author_name": "Eric Sean Turner",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "f4d28ddcb221f35290bef00ec575ddf9c4222145"
+        },
+        {
+            "commit_hash": "6c8239f63e3ec61ef097d39499baa68c19131216",
+            "message": "Remove duplication during url indexer event process (#582)\n\n* Remove duplication during url indexer event process\n\n+ removing rewrite product ids duplication\n+ removing rewrite category ids duplication",
+            "author_name": "Igor",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "ed0bc997dde7e517f430e9d227441ae6f6ea2afe"
+        },
+        {
+            "commit_hash": "468ed5e3a10adde567cd264fedc7152f3c20ea71",
+            "message": "Fix whitespace in addBodyClass($className)\n\nif no result from $this->getBodyClass() output just classname instead of null+whitespace+classname",
+            "author_name": "AndresInSpace",
+            "commiter_name": "GitHub",
+            "parent_hashes": "ef1d14392c8562a71df9ca04ff571c64546c9d87"
+        },
+        {
+            "commit_hash": "f4d28ddcb221f35290bef00ec575ddf9c4222145",
+            "message": "Fix comment about curl timeout unit (#587)",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "377520645a63f31358f81b14c4b130eae4e21062"
+        },
+        {
+            "commit_hash": "377520645a63f31358f81b14c4b130eae4e21062",
+            "message": "Don't break on weird named file in sql directory (#586)\n\nhttps:\/\/blog.fabian-blechschmidt.de\/magento-doesnt-trigger-setup-script\/",
+            "author_name": "Fabian Blechschmidt",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "96be22aebb7678e5f3333e139dc9d67c7963908a"
+        },
+        {
+            "commit_hash": "ef1d14392c8562a71df9ca04ff571c64546c9d87",
+            "message": "Credit Memo Adjustment Fix (#577)\n\nThere is no field or column named `base_adjustment_fee_positive` anywhere in Magento code.",
+            "author_name": "elfling",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "57032bbc7f138f3b1a36e4ed3ac5a5827fa29760"
+        },
+        {
+            "commit_hash": "96be22aebb7678e5f3333e139dc9d67c7963908a",
+            "message": "Credit Memo Adjustment Fix (#577)\n\nThere is no field or column named `base_adjustment_fee_positive` anywhere in Magento code.",
+            "author_name": "elfling",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "b3cabc2580830d8f4d4bea5aac5a4b5e9b355bac"
+        },
+        {
+            "commit_hash": "9ffa3a0d2b3070352bf8a4613046e4764d8e4e9e",
+            "message": "Update to Magento 1.9.4",
+            "author_name": "Chaim Paperman",
+            "commiter_name": "Chaim Paperman",
+            "parent_hashes": "1ed39d11b6c40b1e9a05d933460b97f4d021baef"
+        },
+        {
+            "commit_hash": "b3cabc2580830d8f4d4bea5aac5a4b5e9b355bac",
+            "message": "Limit post-checkout stock re-index to only products that manage stock\u2026 (#562)\n\n* Limit post-checkout stock re-index to only products that manage stock. ref #152\n\n* Restrict collection to just one column in result. Cast id values to int prior to usage in SQL IN statement",
+            "author_name": "Lucas van Staden",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "1a4a7d4cfcdf4c90c55ec293ad726f34c916da05"
+        },
+        {
+            "commit_hash": "1a4a7d4cfcdf4c90c55ec293ad726f34c916da05",
+            "message": "fixed wrong creditmemo base tax calculation (#564)",
+            "author_name": "Simon Sprankel",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "1e252951f0b2e0befad5ab5d36f0373c6348a263"
+        },
+        {
+            "commit_hash": "1e252951f0b2e0befad5ab5d36f0373c6348a263",
+            "message": "composer.json require php < 7.3 (#566)",
+            "author_name": "Tom Lankhorst",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "223d2eef7eb4259a4aedaadcd00160a7710138c9"
+        },
+        {
+            "commit_hash": "223d2eef7eb4259a4aedaadcd00160a7710138c9",
+            "message": "removed Mage_Compiler (#534)",
+            "author_name": "Daniel Niederges\u00e4\u00df",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "b196c47228ce80222bf98eb71a12ac6031abd32d"
+        },
+        {
+            "commit_hash": "b196c47228ce80222bf98eb71a12ac6031abd32d",
+            "message": "Fix showsTime bug in js calendar in which the option to set the time is always shown. (#558)",
+            "author_name": "Ng Kiat Siong",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "2841e4fb86d14ffdf90ac17c6244ce5f1f2a9837"
+        },
+        {
+            "commit_hash": "2841e4fb86d14ffdf90ac17c6244ce5f1f2a9837",
+            "message": "Support additional includes in app\/etc\/includes for better composer integration. (#559)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "872c1b2768705fecce667110e96e59380ce34e36"
+        },
+        {
+            "commit_hash": "b147b27936118b4f6abc89fb5126af4608a93255",
+            "message": "prepare Travis for release of php 7.3 (#549)\n\n* prepare Travis for release of php 7.3\n* also add php nightly to Travis file",
+            "author_name": "Daniel Fahlke",
+            "commiter_name": "GitHub",
+            "parent_hashes": "af99bb3c4b0e2328409a02899b3f50d9e5bbe275"
+        },
+        {
+            "commit_hash": "af99bb3c4b0e2328409a02899b3f50d9e5bbe275",
+            "message": "apply php 7.2 official patch",
+            "author_name": "Pawe\u0142 Cie\u015blik",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "52374d7dbbab4034db4573c0191775abfa189430"
+        },
+        {
+            "commit_hash": "52374d7dbbab4034db4573c0191775abfa189430",
+            "message": "Fix wrong street index in customer register form (#520)\n\n* Fix wrong street index in customer register form, which uses the Varien_Object form_data in getStreet($line), $line is zero-based. In other address edit forms, getStreet($line) is from Mage_Customer_Model_Address_Abstract which correctly returns $arr[$line-1].",
+            "author_name": "Ng Kiat Siong",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "05446a129997c8282f67bb7d0194bcb6ad3a2500"
+        },
+        {
+            "commit_hash": "05446a129997c8282f67bb7d0194bcb6ad3a2500",
+            "message": "Fix user logged out after `reload_acl_flag` updated. (#500)\n\n* Fix user logged out after `reload_acl_flag` updated.\n\nWhen the `reload_acl_flag` is set to 1  the `refreshAcl` method is setting the flag value back to 0. However, it also unsets the password and in doing so causes the `reload` method of the User model to fail the password check. The id is then set to NULL and this gets saved in the users session so the *next* page load results in the user being effectively logged out based on how it is checking in the `isLoggedIn` method.\n\n* Fix user model cannot be saved using only resource model.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "1b175994f6c8dc04e3c77dc8860060526609c68c"
+        },
+        {
+            "commit_hash": "1b175994f6c8dc04e3c77dc8860060526609c68c",
+            "message": "Fixes empty dataflow profile history, closes #285 #428 (#544)\n\nThanks @sreichel!",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "061a25684f7bbc7cb6e04ef8883932240e108c81"
+        },
+        {
+            "commit_hash": "061a25684f7bbc7cb6e04ef8883932240e108c81",
+            "message": "replace recommended way of contact in CoC",
+            "author_name": "Flyingmana",
+            "commiter_name": "sv3n",
+            "parent_hashes": "a7a1879dd976bd040f3517c1ec79ab198fddde10"
+        },
+        {
+            "commit_hash": "a7a1879dd976bd040f3517c1ec79ab198fddde10",
+            "message": "add Code of Conduct\n\nlatest version from https:\/\/www.contributor-covenant.org\nwhich is also used by Magento",
+            "author_name": "Flyingmana",
+            "commiter_name": "sv3n",
+            "parent_hashes": "42f7a7a1c87fc2a53adaf16370c8493dc7374dbd"
+        },
+        {
+            "commit_hash": "42f7a7a1c87fc2a53adaf16370c8493dc7374dbd",
+            "message": "Update getOrderItem in Mage_Bundle to avoid fatal error in getValueHtml",
+            "author_name": "Maxime Huran",
+            "commiter_name": "sv3n",
+            "parent_hashes": "cf2932bc1d0525185d8c39819ea8c0747583000b"
+        },
+        {
+            "commit_hash": "5ca21bad3e3dbc423cc213145668e938e3680b42",
+            "message": "Fix PHP version to allow 7.1.x (#552)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "d44cf5b5a4471649b7b617efaab0a8939e118276"
+        },
+        {
+            "commit_hash": "d44cf5b5a4471649b7b617efaab0a8939e118276",
+            "message": "Clean model cache after commit instead of after save to avoid stale cache being saved before commit. (#543)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "419a2969882089fd212c7a8e954e3903b5354020"
+        },
+        {
+            "commit_hash": "419a2969882089fd212c7a8e954e3903b5354020",
+            "message": "Fix shouldUrlBeSecure when base_unsecure_url is secure. (#547)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "e2bd098ac0b98e5ef82c32e6636259a65edc6192"
+        },
+        {
+            "commit_hash": "e2bd098ac0b98e5ef82c32e6636259a65edc6192",
+            "message": "Fix cold config cache results in cache thrashing. Fixes #422",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "1957b28e88c057588c3e6bd6e1f252b4c0662adc"
+        },
+        {
+            "commit_hash": "1957b28e88c057588c3e6bd6e1f252b4c0662adc",
+            "message": "Added website name on order create page, fixes #358 (#427)\n\n*  Added website name on order create page, fixes #358\n\n* Changed translations\n\n* Moved tranlation to own file",
+            "author_name": "sv3n",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "1f14c9a49ff108da53d8ce9d4a1bd0e64cad7eda"
+        },
+        {
+            "commit_hash": "1f14c9a49ff108da53d8ce9d4a1bd0e64cad7eda",
+            "message": "Sort categories returned by  \"getChildren\" by position (#351)\n\n* Fixes #350",
+            "author_name": "Elias Kotlyar",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "0c7484c4ff2ce0f1c0df7a818420bc93613bdcef"
+        },
+        {
+            "commit_hash": "0c7484c4ff2ce0f1c0df7a818420bc93613bdcef",
+            "message": "Fix in ACL checking for newsletter subscription (#529)\n\n* Fix in ACL checking for newsletter subscription\n\n1. The checked ACL identifier (`customer\/newsletter`) does not exist, so any restricted admin user cannot manage subscriptions.\n2. It should check the same identifier that the customer edit page uses to detemine if the tab with checkbox should be visible (see https:\/\/github.com\/OpenMage\/magento-lts\/blob\/1.9.3.x\/app\/code\/core\/Mage\/Adminhtml\/Block\/Customer\/Edit\/Tabs.php#L92).\n\n* Fixed a typo in ACL resource\n\nResource should have been `newsletter\/subscriber`, not `newsletter\/subscription`.",
+            "author_name": "Mark van der Sanden",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "9da6f65a737f521610af721dadd1c6d72ee46c64"
+        },
+        {
+            "commit_hash": "9da6f65a737f521610af721dadd1c6d72ee46c64",
+            "message": "Add misssing form key enable check for saveOrderAction() (#484)",
+            "author_name": "Marvin Sengera",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "7cf897113acc5d350c19e71f24f73c831ec7d574"
+        },
+        {
+            "commit_hash": "7cf897113acc5d350c19e71f24f73c831ec7d574",
+            "message": "Remove diff trash from 40720cab87d614a57b1396800936fa86c6dc098b (#495)",
+            "author_name": "Erik Dannenberg",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "fa5a754b05647778965f147a521a1ca13fc74407"
+        },
+        {
+            "commit_hash": "fa5a754b05647778965f147a521a1ca13fc74407",
+            "message": "Update bad return and param comment",
+            "author_name": "Bastien Lamamy",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "70270bfe27d69ef432efb70118f9c68967130f55"
+        },
+        {
+            "commit_hash": "70270bfe27d69ef432efb70118f9c68967130f55",
+            "message": "Hide inactive categories from sitemap\n\nWhy?\nbecause https:\/\/github.com\/OpenMage\/magento-lts\/pull\/59 does not appear to do the trick.\nWhat?\nHide inactive categories from web-based sitemap at \/catalog\/seo_sitemap\/category\/ and \/catalog\/seo_sitemap\/category\/tree\/\nWeird?\nThis template `template=\"catalog\/seo\/tree.phtml\"` is used for both layouts (catalog_seo_sitemap_category and catalog_seo_sitemap_category_tree) likely because of `<reference name=\"seo.sitemap.container\">` ?? ...I think, not sure. Anyways, `template=\"catalog\/seo\/sitemap.phtml\"` is not used apparently, but that's not a big issue worthy of time to fix.",
+            "author_name": "Makis Palasis",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "98adc08bb6edaf3d9b7dd309db0115a6415b800d"
+        },
+        {
+            "commit_hash": "98adc08bb6edaf3d9b7dd309db0115a6415b800d",
+            "message": "Update Mysqli.php (#536)\n\nNo comment needed IMO",
+            "author_name": "henrykb",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "2daa96793316d0e3e91052167dc883394905871c"
+        },
+        {
+            "commit_hash": "2daa96793316d0e3e91052167dc883394905871c",
+            "message": "Duplicate addPriceData() function call (#526)",
+            "author_name": "Bastien Lamamy",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "58a825d12dfa753b648d99645bc772cb9e50beb5"
+        },
+        {
+            "commit_hash": "d71371864919bb8a0525a30411aa6ad6991f9ead",
+            "message": "added php7 htaccess settings (#517)",
+            "author_name": "jtnw",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "c93e134c3e66195aff466465a50e9bc5f1348386"
+        },
+        {
+            "commit_hash": "f1127a8d87117164bfaac8b76834829fe5f4720d",
+            "message": "Updating to pristine 1.9.3.10 version",
+            "author_name": "Eric Seastrand",
+            "commiter_name": "Eric Seastrand",
+            "parent_hashes": "6135503a7bc8760a5be9b25db711b42fb18ea801"
+        },
+        {
+            "commit_hash": "3bdc91eff800ec8bb0630266e4ccc72fd18257ff",
+            "message": "Fix mage cookies clear from #73\n\nFix mage cookies clear from #73\n\nhttps:\/\/magento.stackexchange.com\/questions\/105068\/mage-cookies-clear-not-working\n\nUntested by me personally",
+            "author_name": "seansan",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "34afee089b4f4c80bf0340fb0c6c9b761b04d48b"
+        },
+        {
+            "commit_hash": "34afee089b4f4c80bf0340fb0c6c9b761b04d48b",
+            "message": "Use secure cookie if unsecure base url is actually secure. (#501)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "51a0c5beb27a35a2078b2914c373d54faa266472"
+        },
+        {
+            "commit_hash": "51a0c5beb27a35a2078b2914c373d54faa266472",
+            "message": "Add translation to note\n\nWhen we create a product attribute like this : \n\n```php\n $installer->addAttribute(Mage_Catalog_Model_Product::ENTITY, \"associated_title\", array(\n       \/\/ [...]\n        'note'                       => 'My Note',\n       \/\/ [...]\n    ));\n```\n\nThe note is not translated even if the translation exists.\nSo this change call the translation for the note information.",
+            "author_name": "Maxime Huran",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "afc58e89714d5ec3c7a24b4af571bc3d4d66f0e3"
+        },
+        {
+            "commit_hash": "a55ff8cfcffc5ec9fd60ae0fe090cb4ebd334d81",
+            "message": "Also deleted files which where removed since 1.9.3.9",
+            "author_name": "Jeroen Boersma",
+            "commiter_name": "Jeroen Boersma",
+            "parent_hashes": "dbd6d6b1bcafc6ec332b56b4ae2cf23d2b5d3b5b"
+        },
+        {
+            "commit_hash": "f78f0c2421555d3c3f0f18f17a86cdd2a7315972",
+            "message": "Added srcset support to tiny_mce wysiwyg editor (#481)\n\nAdded support for srcset in wysiwyg editor by allowing the tag attributes",
+            "author_name": "Tobias Schifftner",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "1e31c014f1b4855506b8427954b0f967089261b6"
+        },
+        {
+            "commit_hash": "1e31c014f1b4855506b8427954b0f967089261b6",
+            "message": "Sitemap dispatch event to add custom data \/\/ Rename dispatch event (#468)",
+            "author_name": "Bastien Lamamy",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "b5d554dc1afe26c6c2e79ca4ae44f1cfaa63d424"
+        },
+        {
+            "commit_hash": "b5d554dc1afe26c6c2e79ca4ae44f1cfaa63d424",
+            "message": "send PayPal new account mail in correct language (#463)",
+            "author_name": "Simon Sprankel",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "2dafb7386bd9dffa55c878188f7c704d065ab6bc"
+        },
+        {
+            "commit_hash": "2dafb7386bd9dffa55c878188f7c704d065ab6bc",
+            "message": "Replace font LinLibertineFont with FONT_HELVETICA, ref #86, closes #272 #274 (#425)",
+            "author_name": "sreichel",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "56bafb106240b3218a6d99ac97f7c585f29e4b9a"
+        },
+        {
+            "commit_hash": "56bafb106240b3218a6d99ac97f7c585f29e4b9a",
+            "message": "Fix date selection when current date is disabled. (#327)",
+            "author_name": "Matt Davenport",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "1e29f23a51a9da1f44224b484f8b108f79b0cd9f"
+        },
+        {
+            "commit_hash": "1e29f23a51a9da1f44224b484f8b108f79b0cd9f",
+            "message": "Missing hidden tax\n\nwill cause paypal to generate fraud error",
+            "author_name": "dvdsndr",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "4bb045f9657d02f3d891abe818b7e9a26838fa65"
+        },
+        {
+            "commit_hash": "4bb045f9657d02f3d891abe818b7e9a26838fa65",
+            "message": "Typo in Product.php\n\nSee code above see above, should be 'websites' not 'website'",
+            "author_name": "dvdsndr",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "1863ce623eb14568eab3497239a3247b790c4073"
+        },
+        {
+            "commit_hash": "1863ce623eb14568eab3497239a3247b790c4073",
+            "message": "Fixes issue with wysiwyg editor re-creating thumbnails  (#261)\n\n* Fixes issue with wysiwyg editor re-creating thumbnails each load causing performance \/ database connection limit issues.",
+            "author_name": "MageAustralia",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "43e975f24501ccf8c2db8968f2dcb8c84ad875d8"
+        },
+        {
+            "commit_hash": "43e975f24501ccf8c2db8968f2dcb8c84ad875d8",
+            "message": "Sitemap dispatch event for add custom data (#248)",
+            "author_name": "Bastien Lamamy",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "c42291e50ca2294bbfc88b27ac8d51a9c0b19199"
+        },
+        {
+            "commit_hash": "c42291e50ca2294bbfc88b27ac8d51a9c0b19199",
+            "message": "Add option reindexallrequired (#184)\n\nAdd option reindexallrequired\nas described here: http:\/\/magento.stackexchange.com\/questions\/3028\/permanent-solution-for-the-common-indexing-issue",
+            "author_name": "seansan",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "260b7bdb039fddc458253cf17aa1312415e1c496"
+        },
+        {
+            "commit_hash": "260b7bdb039fddc458253cf17aa1312415e1c496",
+            "message": "Fix possible option id\/label collisions in getOptionId() (#109)\n\nSee https:\/\/gist.github.com\/edannenberg\/15c0eddfddad40eca32793708f67c331 for details.",
+            "author_name": "Erik Dannenberg",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "47381dca9ad59e66798e6811e8903b2e9f4a5756"
+        },
+        {
+            "commit_hash": "47381dca9ad59e66798e6811e8903b2e9f4a5756",
+            "message": "magento patch SUPEE 7136 - secure session cookie fix (#236)",
+            "author_name": "bob2021",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "80b9293be028689eb904e2dd4fa1d62d5bbfa087"
+        },
+        {
+            "commit_hash": "80b9293be028689eb904e2dd4fa1d62d5bbfa087",
+            "message": "Made gender translatable, fixes #237 (#243)",
+            "author_name": "sreichel",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "543015f90b4d7c06ade92c806891bc3560c64dfe"
+        },
+        {
+            "commit_hash": "543015f90b4d7c06ade92c806891bc3560c64dfe",
+            "message": "Fix admin create order shipping_as_billing is 0 (#306)\n\nissue: https:\/\/github.com\/OpenMage\/magento-lts\/issues\/305",
+            "author_name": "zamoroka",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "c04788c25699f6749b3dfa4c2b8b7e56aa1c0619"
+        },
+        {
+            "commit_hash": "c04788c25699f6749b3dfa4c2b8b7e56aa1c0619",
+            "message": "Use describeTable and then use prepareColumnValue to actually prepare the value being used in the where section of select statements (#383)\n\nSquashed commit of the following:\n\ncommit d9bfe4b3ee0394848729572a486fd6fa2118fcd9\nMerge: 9312e9f66 3d423b0ef\nAuthor: Colin Mollenhour <colin@mollenhour.com>\nDate:   Fri Mar 9 13:27:25 2018 -0500\n\n    Merge branch '1.9.3.x' of https:\/\/github.com\/pepijnblom\/magento-lts into pepijnblom-1.9.3.x\n\ncommit 3d423b0efe8b50f0948c885bf3bd77334f89a229\nMerge: e0e921ecf 7be0774fe\nAuthor: Pepijn Blom <p.blom@gracious.nl>\nDate:   Thu Mar 1 12:14:07 2018 +0100\n\n    Merge remote-tracking branch 'upstream\/1.9.3.x' into 1.9.3.x\n\ncommit e0e921ecf320ef280ddb8bcd09ac7c14b8927141\nAuthor: Pepijn Blom <pepijn@graciousstudios.nl>\nDate:   Thu Dec 14 09:22:22 2017 +0100\n\n    remove unnecessary isset\n\ncommit 1be6fa9e4001bc6a075368f41934c64208b9a25e\nMerge: 24025b0a1 f6e149169\nAuthor: Pepijn Blom <pepijn@graciousstudios.nl>\nDate:   Wed Dec 13 15:29:19 2017 +0100\n\n    Merge branch 'feature\/quote_numeric_increment_id' into 1.9.3.x\n\ncommit f6e14916963def34012ff473eace2366e7e6a21b\nAuthor: Pepijn Blom <pepijn@graciousstudios.nl>\nDate:   Wed Dec 13 14:50:27 2017 +0100\n\n    cast to string instead of using prepareColumnValue which is a bit overkill\n\ncommit 2c7602f456792faf1e556fe9627d17d02edf1f89\nAuthor: Pepijn <pepijn@graciousstudios.nl>\nDate:   Wed Dec 6 20:24:06 2017 +0100\n\n    Update Quote.php\n\ncommit b3a16892c34a0b2984e0b831ae00ed9694683492\nAuthor: Pepijn <pepijn@graciousstudios.nl>\nDate:   Tue Dec 5 11:04:44 2017 +0100\n\n    cleanup\n\ncommit 3b6b30cf05423263abc64dff35028124985c4904\nAuthor: Pepijn <pepijn@graciousstudios.nl>\nDate:   Tue Dec 5 11:00:35 2017 +0100\n\n    Removed unnecessary isset\n\ncommit b631e068af86b47707e49d06bab27e9440d2be17\nAuthor: Pepijn Blom <pepijn@graciousstudios.nl>\nDate:   Sat Nov 25 21:03:35 2017 +0100\n\n    rever entity_id usage just to be on the safe side\n\ncommit 6ff29293736158176671494b52b7c4d4ab2e57be\nAuthor: Pepijn Blom <pepijn@graciousstudios.nl>\nDate:   Sat Nov 25 21:00:14 2017 +0100\n\n    cleanup\n\ncommit dc6bfa51086648dbc31c480789b426c78598dad8\nAuthor: Pepijn Blom <pepijn@graciousstudios.nl>\nDate:   Sat Nov 25 20:47:22 2017 +0100\n\n    fix for selecting numeric only increment_id without index\n\ncommit 24025b0a1f1dfbce84edf23a8878880748750c89\nAuthor: Pepijn <pepijn@graciousstudios.nl>\nDate:   Tue Nov 21 12:27:11 2017 +0100\n\n    Removed redundant isset\n\ncommit e60cd033a78a2b44c93837f524d9be50036ec1d7\nAuthor: Pepijn Blom <pepijn@graciousstudios.nl>\nDate:   Mon Nov 20 23:35:15 2017 +0100\n\n    Use describeTable and then use prepareColumnValue to actually prepare the value being used in the where section of select statements",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "9312e9f6693b9d17fe2927222a7079a1f38c5606"
+        },
+        {
+            "commit_hash": "9312e9f6693b9d17fe2927222a7079a1f38c5606",
+            "message": "Fixes undefined classes",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "0a9a5e8f81361cb5ea817b8bf6277d7b50484fca"
+        },
+        {
+            "commit_hash": "0a9a5e8f81361cb5ea817b8bf6277d7b50484fca",
+            "message": "Fix for #443, catalog pricerules start and end date not respected (co\u2026 (#444)\n\n1. Fromtime and totime are now measured in GMT\n2. And compared to GMT time (now) in $timestamp\n\nThis way (if and) when the CRON runs the rules at that specific time are checked and activated (or disabled) - as this cron job runs per default at 2 AM as I understand. This would mean that all rules enabled and disable are in effect turned ON and OFF at 2AM during the night the rule is activated (1st day) and de-activated after the end date 2 hours after midnight. \n\nReference 1: https:\/\/magento.stackexchange.com\/questions\/61045\/catalog-price-rule-from-today-does-not-apply\nReference 2: (under catalog rules) http:\/\/jokiruiz.com\/magento\/magento-timezones-timestamps\/\n\nTest data:\n- for a rule with start date 10 dec 2017 and end date 30 jan 2018\n- we see the following comparison on Thu 1 feb 2018 @ 14:28 GMT\n\nTIMESTAMP: Thu, 01 Feb 2018 14:28:03 GMT\nSTART; Sat, 09 Dec 2017 23:00:00 GMT\nEND: Tue, 30 Jan 2018 22:59:59 GMT\n\nSo rule in this case is turned OFF\n\n* @colinmollenhour Use simply 'time()' to get Unix timestamp.",
+            "author_name": "seansan",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "c270fb84b501ca601cf95068a87dedf7e5c0accd"
+        },
+        {
+            "commit_hash": "c270fb84b501ca601cf95068a87dedf7e5c0accd",
+            "message": "Cast handling fee to float",
+            "author_name": "Fabian Schmengler",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "b098b2153a9f99510dbb34460ede7a2965025081"
+        },
+        {
+            "commit_hash": "b098b2153a9f99510dbb34460ede7a2965025081",
+            "message": "Ensure StockId is set before saving cataloginventory\/stock_item\n\nThis fixes mainly a regression introduced in Magento 1.8:\n\nThe catalogInventoryStockItemUpdate api method does not call\nproduct->save() anymore, which until then ensured the stock_item model\nhad a StockId before saving. As a consequence the stock_item->save()\nfails due to a fkey constraint on stock_id, rendering the api\nmethod defunct.",
+            "author_name": "Erik Dannenberg",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "2952af7ec112d8c58e7f300f619cb44d499c573f"
+        },
+        {
+            "commit_hash": "2952af7ec112d8c58e7f300f619cb44d499c573f",
+            "message": "Fix rounding bug? Supposed to be solved in 1.9.3.1\n\nhttps:\/\/magento.stackexchange.com\/questions\/108570\/1-9-2-catalogue-price-rules-rounding-when-more-then-one-rule-applied-with-stop\n\nMight be that this bug was fixed elsewhere - or not? \n\nplease cancel the pull if wrong (we are seeing this rounding bug in our stores now and on 1.9.3.x)",
+            "author_name": "seansan",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "d92a24aa27360439a6f6ed68ba9260685b2f9e54"
+        },
+        {
+            "commit_hash": "d92a24aa27360439a6f6ed68ba9260685b2f9e54",
+            "message": "Fix 1.9.3.x upstream merges\n\nThe upstream merges for some 1.9.3.x releases introduced a few inconsistencies:\n\n* cms_generate_breadcrumbs event is fired twice\n* related to the above dd412309 is applied to wrong code block\n* few locale .csv have now escaped single quote entries along with the entries where those got removed in #46\n* #21 got reverted at some point\n* var\/package dir has 5 obsolete xml files\n* slightly different configuration in Sales, SalesRule and Tax config.xml\n* Mage_SalesRule_Model_Validator is outdated compared with latest from 1.9.3.7",
+            "author_name": "Erik Dannenberg",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "a3135126dd2c466b19af7285c4f43a756bb348d1"
+        },
+        {
+            "commit_hash": "a3135126dd2c466b19af7285c4f43a756bb348d1",
+            "message": "[PHP-7] Fix memory leak when using GD image handler (#451)\n\n* [PHP-7] fix memory leak\n\n* Add comment to explain reason for explicit unset. Refs #451",
+            "author_name": "altdovydas",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "68938964a16b4eef440051f7fc18c79f9d2bcdff"
+        },
+        {
+            "commit_hash": "68938964a16b4eef440051f7fc18c79f9d2bcdff",
+            "message": "PHP 7.2 fixes (method signature) (#450)\n\n* added parameters to getAllOptions method in classes that extend Mage_Eav_Model_Entity_Attribute_Source_Table to fix PHP 7.2 strictly enforced method signatures\n\n* added phpdoc params to getAllOptions methods indicating arguments have no effect",
+            "author_name": "jtnw",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "36a0afb8937fd6c358c507b3a59b7cf119fc3e8b"
+        },
+        {
+            "commit_hash": "36a0afb8937fd6c358c507b3a59b7cf119fc3e8b",
+            "message": "Fix 'Undefined index' errors in session validator. Refs #394",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "fd5b9471dea8be3493e16b0487e0a312e5fea02a"
+        },
+        {
+            "commit_hash": "0e7f77ea8756e69df59746c9191f45a1d7fbad3d",
+            "message": "Merge var directory from 1.9.3.8.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "2f09902201f5ae2b2063cdde4c354484f72d5396"
+        },
+        {
+            "commit_hash": "2f09902201f5ae2b2063cdde4c354484f72d5396",
+            "message": "Update Copyright notices for 1.9.3.8.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "524a16627b4c9e18d82b4673a05157e2fdcdbfe1"
+        },
+        {
+            "commit_hash": "524a16627b4c9e18d82b4673a05157e2fdcdbfe1",
+            "message": "FIX-1 Mage_Core_Controller_Varien_Exception::prepareRedirect (#462)\n\ncorrectly sets _resultCallbackParams value",
+            "author_name": "Dmitry Furs",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "7be0774fef2f7a34b0dc0852073d24d81c4dbd17"
+        },
+        {
+            "commit_hash": "a462709660ce684c06a41d5b0017f6e1970f3534",
+            "message": "Remove empty JS file\n\nMethod use for add swatches JS on product page\n(call: PRODUCT_TYPE_configurable Handle, rwd\/default\/layout\/configurableswatches.xml)\nBut if the condition is false, this method return an empty string AND include empty js.\nhttp:\/\/storage3.static.itmages.com\/i\/18\/0228\/h_1519839970_6082466_fdd17a4d7d.png",
+            "author_name": "Bastien Lamamy",
+            "commiter_name": "Bastien Lamamy",
+            "parent_hashes": "7be0774fef2f7a34b0dc0852073d24d81c4dbd17"
+        },
+        {
+            "commit_hash": "1b7c8107492ddea9d480152bdc81908befd0795c",
+            "message": "Upgraded to Magento 1.9.3.8\n\n* Applied diff 1.9.3.7 -> 1.9.3.8\n  CE-1.9.3.7-1.9.3.8-2018-02-23-05-55-20.diff",
+            "author_name": "Jeroen Boersma",
+            "commiter_name": "Jeroen Boersma",
+            "parent_hashes": "bea006a3fe4c87dc87a262e379ba879c7c4f8805"
+        },
+        {
+            "commit_hash": "7be0774fef2f7a34b0dc0852073d24d81c4dbd17",
+            "message": "Fix retrieval of payment child transactions. (#440)\n\ngetType does not exist, getTxnType is the right magic function since the data key is txn_type",
+            "author_name": "manuperezgo",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "d85ff3dd30599a4ff902b5fed446f7da4024770e"
+        },
+        {
+            "commit_hash": "d85ff3dd30599a4ff902b5fed446f7da4024770e",
+            "message": "Remove support for quoted-string email address format. Fixes #378 (#432)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "007268a23f9c83b8e0947134f3f5127e9a572787"
+        },
+        {
+            "commit_hash": "007268a23f9c83b8e0947134f3f5127e9a572787",
+            "message": "Fix undefined var in Mage_Core_Model_Url_Rewrite::removeTag()",
+            "author_name": "Erik Dannenberg",
+            "commiter_name": "sreichel",
+            "parent_hashes": "3c72e649fd8f27d89d01f0716f3f4f4dae6df5e9"
+        },
+        {
+            "commit_hash": "3c72e649fd8f27d89d01f0716f3f4f4dae6df5e9",
+            "message": "Fixed\/added doc blocks @deprecated annotations",
+            "author_name": "Sven Reichel",
+            "commiter_name": "sreichel",
+            "parent_hashes": "5577362a971a315fa2d019db90824f6efe0090c1"
+        },
+        {
+            "commit_hash": "5577362a971a315fa2d019db90824f6efe0090c1",
+            "message": "update tld list from iana",
+            "author_name": "spinsch",
+            "commiter_name": "sreichel",
+            "parent_hashes": "6286e05e4219e14cd6bbd26b07a1038ef1357da5"
+        },
+        {
+            "commit_hash": "6286e05e4219e14cd6bbd26b07a1038ef1357da5",
+            "message": "Fixed php error in file, usage of undefined variable\n\nM1 team clearly did a typo with: $txnId",
+            "author_name": "manuperezgo",
+            "commiter_name": "sreichel",
+            "parent_hashes": "8375c9b9e0455f1216453abb5c1286a7151725fb"
+        },
+        {
+            "commit_hash": "8375c9b9e0455f1216453abb5c1286a7151725fb",
+            "message": "Missing break statement",
+            "author_name": "Leandro F. L",
+            "commiter_name": "sreichel",
+            "parent_hashes": "e2491cf743223d87364feb6a14aac94e45c287f8"
+        },
+        {
+            "commit_hash": "e2491cf743223d87364feb6a14aac94e45c287f8",
+            "message": "Removed deprecated method _setAttribteValue()",
+            "author_name": "Sven Reichel",
+            "commiter_name": "sreichel",
+            "parent_hashes": "65c27da160b6f3e6c11b6332b354da88eaf921f8"
+        },
+        {
+            "commit_hash": "de06e671c09b375605a956e100911396822e276a",
+            "message": "Store session validator data once and validate only once. Refs #394 (#406)\n\n* Store session validator data once and validate only once. Refs #394\n\n* Don't read session validator keys that will not be validated.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "72a450314d84915a76578b1b2ce29d1821c82296"
+        },
+        {
+            "commit_hash": "72a450314d84915a76578b1b2ce29d1821c82296",
+            "message": "Fix \"Store View\" field value empty when reloading form after failed save. (#415)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "fd6351dfbafd781cbaab87b0729367b9e7cd9500"
+        },
+        {
+            "commit_hash": "b37e721f5fa041942a45407bb2b1054b1747c0b3",
+            "message": "The key and weight variable used as a key and weight foreach loop is already used in the same way by the outer foreach loop.",
+            "author_name": "Leandro F. L",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "defa102570fc46cce29afa79990a4e4039c4e17f"
+        },
+        {
+            "commit_hash": "ac2b99b9cecc7221d3383dc497dd340fb417c770",
+            "message": "Remove php closing tags",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "defa102570fc46cce29afa79990a4e4039c4e17f"
+        },
+        {
+            "commit_hash": "defa102570fc46cce29afa79990a4e4039c4e17f",
+            "message": "Fix: Escape strings in admin grids by default. Fixes #375 (#376)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "62f322763c85ad553795d06337d1a9cdbb98c725"
+        },
+        {
+            "commit_hash": "62f322763c85ad553795d06337d1a9cdbb98c725",
+            "message": "Fix: Escape values in formatted grid columns. Refs #375 (#377)",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "b2b3dbf3f4f2924c3b8af54feb284f8ed69a7812"
+        },
+        {
+            "commit_hash": "b2b3dbf3f4f2924c3b8af54feb284f8ed69a7812",
+            "message": "Added progressive to image resize, see #95 (#197)",
+            "author_name": "sreichel",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "f2b081552514e3e76ae91ef20f9901447670b6c7"
+        },
+        {
+            "commit_hash": "f2b081552514e3e76ae91ef20f9901447670b6c7",
+            "message": "Added addCrumbBefore() and removeCrumb() methods",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "1645688661cae756dc5b97c2ebaad27ef18341b4"
+        },
+        {
+            "commit_hash": "1645688661cae756dc5b97c2ebaad27ef18341b4",
+            "message": "Added functionality for $after paramenter in addCrumbs() method",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "5ed4a51ed36f5cfdc5c621676b8112bc8cafe0ed"
+        },
+        {
+            "commit_hash": "5ed4a51ed36f5cfdc5c621676b8112bc8cafe0ed",
+            "message": "Allow to change suffix and prefix options per storeview (#400)",
+            "author_name": "Marc",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "cde6df4f3fc9cfaa62ab2302911c8d98c4062805"
+        },
+        {
+            "commit_hash": "cde6df4f3fc9cfaa62ab2302911c8d98c4062805",
+            "message": "Fix case in class names and method calls (#405)",
+            "author_name": "Leandro F. L",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "ed668212fc994ddfe1223020b6ab1723d2652fa7"
+        },
+        {
+            "commit_hash": "ed668212fc994ddfe1223020b6ab1723d2652fa7",
+            "message": "The productIds variable is already used as an array expression (#397)",
+            "author_name": "Leandro F. L",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "f3f125c953a4ab6688ab24d376f3c7b28d594908"
+        },
+        {
+            "commit_hash": "f3f125c953a4ab6688ab24d376f3c7b28d594908",
+            "message": "There is exists no Mage_Core_Model_Exception",
+            "author_name": "Leandro F. L",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "57738e6e10ddb66f4ba60eccf15bcdca04330b19"
+        },
+        {
+            "commit_hash": "57738e6e10ddb66f4ba60eccf15bcdca04330b19",
+            "message": "Exception has already been caught",
+            "author_name": "Leandro F. L",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "98f2f171e4b14e904d430d4a902205a0f443f402"
+        },
+        {
+            "commit_hash": "98f2f171e4b14e904d430d4a902205a0f443f402",
+            "message": "Duplicate case expression (#395)",
+            "author_name": "Leandro F. L",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "cf8f84ad2f3094d5c2a1528c30411767e58dafc4"
+        },
+        {
+            "commit_hash": "cf8f84ad2f3094d5c2a1528c30411767e58dafc4",
+            "message": "Add quotes to numeric incrementIds - The Sequel (#388)\n\nCast increment ids to string to ensure use of index.",
+            "author_name": "Pepijn",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "84726eef841b7c92022c8e0c9780793b40a76254"
+        },
+        {
+            "commit_hash": "84726eef841b7c92022c8e0c9780793b40a76254",
+            "message": "Remove assignments where the left and the right parts of assignment are equal (#399)",
+            "author_name": "Leandro F. L",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "d87d65401665f8f5cd4fce882dcb0a689de89e86"
+        },
+        {
+            "commit_hash": "d87d65401665f8f5cd4fce882dcb0a689de89e86",
+            "message": "Fix wrong argument name in downloaders Mage_HTTP_Client_Curl->curlOptions\n\nFix Mage_HTTP_Client_Curl->curlOptions parameter name to match one used in the method body",
+            "author_name": "seansan",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "47cfea4525c4d0bba47601ce055dc56a78a3da63"
+        },
+        {
+            "commit_hash": "47cfea4525c4d0bba47601ce055dc56a78a3da63",
+            "message": "Remove duplicated array keys (#402)",
+            "author_name": "Leandro F. L",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "1ac08b73d6f617ade57c90e0e8d2ed5e3d00fafa"
+        },
+        {
+            "commit_hash": "1ac08b73d6f617ade57c90e0e8d2ed5e3d00fafa",
+            "message": "Fixe wrong comment in \/media\/.htaccess (#391)\n\nSee also https:\/\/magento.com\/tech-resources\/bug-tracking\/issue\/index\/id\/1807\/",
+            "author_name": "Jonas H\u00fcnig",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "94a0e92997ab4297419d80f8dc1398d5ee12ede8"
+        },
+        {
+            "commit_hash": "94a0e92997ab4297419d80f8dc1398d5ee12ede8",
+            "message": "Remove duplicated semicolons (#404)",
+            "author_name": "Leandro F. L",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "ca25bb54f222dc7f435eba184f3fe6634226a996"
+        },
+        {
+            "commit_hash": "ca25bb54f222dc7f435eba184f3fe6634226a996",
+            "message": "Delete .mysql4-upgrade-0.1.9-0.1.10.php.3hidjY",
+            "author_name": "David Robinson",
+            "commiter_name": "GitHub",
+            "parent_hashes": "cb7e15e920247671a04c38fbd0b5447c6f825f80"
+        },
+        {
+            "commit_hash": "88a89b16a343cae0f13a3b64f7cd2a303d11ddab",
+            "message": "Delete .mysql4-upgrade-0.1.9-0.1.10.php.3hidjY\n\nThis empty file appears to have snuck into the new 1.9.3.7 release. It is not present in the package downloaded from the official Magento site.",
+            "author_name": "Eric Seastrand",
+            "commiter_name": "GitHub",
+            "parent_hashes": "f9188bdc4df444a2c2b34a401375c5d12fbbfd2e"
+        },
+        {
+            "commit_hash": "a5ad2ee47599400ef0066562315b300c7f581938",
+            "message": "1.9.3.7",
+            "author_name": "Fabian Blechschmidt",
+            "commiter_name": "Fabian Blechschmidt",
+            "parent_hashes": "f4b5f152af50e7a1da128b6a1f634658305ae72a"
+        },
+        {
+            "commit_hash": "c760e367a06188e63d42f6f50738d5dbf5b21eaf",
+            "message": "Remove stray block element in checkout.xml",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "5d9d2586d73e9b1ec8d8358668c0bb540e5a54f9"
+        },
+        {
+            "commit_hash": "9a74a4a3a851c501430a25ef925944808360878c",
+            "message": "add element to new line",
+            "author_name": "spinsch",
+            "commiter_name": "spinsch",
+            "parent_hashes": "00ffa8c5b1c8e16d6f91fec7fe0065713456f7e5"
+        },
+        {
+            "commit_hash": "00ffa8c5b1c8e16d6f91fec7fe0065713456f7e5",
+            "message": "position changed in array",
+            "author_name": "spinsch",
+            "commiter_name": "spinsch",
+            "parent_hashes": "b07d012066790d4c52281eb5ba9b1403f0bbc537"
+        },
+        {
+            "commit_hash": "26cca248bdeb05232663f3021106d14335a716cb",
+            "message": "Added missing comma, see #317, fixes #370",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "1eaada92863d70274033ef6fd9a998a0bac941eb"
+        },
+        {
+            "commit_hash": "d3801ade0b7087b99d7ecc652c44d896efcc45d5",
+            "message": "Fix bug with missing close parenthesis",
+            "author_name": "Lee Saferite",
+            "commiter_name": "GitHub",
+            "parent_hashes": "70c9cfc84afeffb2839d499b6b499bfe59c709b2"
+        },
+        {
+            "commit_hash": "70c9cfc84afeffb2839d499b6b499bfe59c709b2",
+            "message": "Make Mage registry related methods consistent",
+            "author_name": "Lee Saferite",
+            "commiter_name": "GitHub",
+            "parent_hashes": "8f7d5fcce2ae781521bef940a0d1c6150ffd6810"
+        },
+        {
+            "commit_hash": "58390284de8b9a557b9d798b875f125e5aa8b7d8",
+            "message": "Removed obsolete files, fixes #352",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "8f7d5fcce2ae781521bef940a0d1c6150ffd6810"
+        },
+        {
+            "commit_hash": "cfc04835be747a2ba85bc660f77c73533ae92cf5",
+            "message": "Fixed typo in Mage_HTTP_Client_Curl, fixes #281",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "2331d449e86b6f1d2d48d1ad8bc12070768cbc0a"
+        },
+        {
+            "commit_hash": "3de86930c174f0a88d499ba65637118d244d99ac",
+            "message": "Fixed removeAccents method for german umlauts",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "2331d449e86b6f1d2d48d1ad8bc12070768cbc0a"
+        },
+        {
+            "commit_hash": "f7313ee3777052801004d20ca7d270f1fe622c45",
+            "message": "Remove rej file",
+            "author_name": "David Robinson",
+            "commiter_name": "David Robinson",
+            "parent_hashes": "0eabf7496c4ac7cb1935534f710ce7ba7e7dcbfb"
+        },
+        {
+            "commit_hash": "92ce7271aeb20f6ca96cf28568b7b83c4ef78e82",
+            "message": "Speed up lint by excluding lib\/Zend",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "eb9f5209b6b89c84f647743ce2119cdcb987bc2b"
+        },
+        {
+            "commit_hash": "eb9f5209b6b89c84f647743ce2119cdcb987bc2b",
+            "message": "Fix errors found via PHP lint.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "7aedb6ef2cd603e0b7295c8025917e9c54ec0b09"
+        },
+        {
+            "commit_hash": "7aedb6ef2cd603e0b7295c8025917e9c54ec0b09",
+            "message": "Actually fix PHP lint path pruning.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "895c2a5ec68af8180fbbcce744c33e015287f66b"
+        },
+        {
+            "commit_hash": "895c2a5ec68af8180fbbcce744c33e015287f66b",
+            "message": "Fix PHP lint path pruning.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "c9f5e824ced51c885635ef75560eeb575119a102"
+        },
+        {
+            "commit_hash": "c9f5e824ced51c885635ef75560eeb575119a102",
+            "message": "Exclude lib\/PEAR and lib\/phpseclib from PHP Lint test.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "7b83c28d4ea5ed055e731c06f04136e02fedef0f"
+        },
+        {
+            "commit_hash": "7b83c28d4ea5ed055e731c06f04136e02fedef0f",
+            "message": "Allow PHP 7.2 to fail for now.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "5ae07ec2bfd7280e6d1afc9fd150d12da801e993"
+        },
+        {
+            "commit_hash": "ba0b0c39962cfabf015d8ae90bd973c70d18d3f6",
+            "message": "Create .travis-ci.yml adding PHP lint",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "b3cf05f72f56320dad6cdb95fc0a79d474674702"
+        },
+        {
+            "commit_hash": "72488e9904bdbbd17b60d551d6b9f3fe9cd19fcb",
+            "message": "Fixed typo, fixes #334",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "8c3ba4eee1497cbf781f9f22e930d0fad1f474f1"
+        },
+        {
+            "commit_hash": "52eeb3a46144c7f1fff997367711fdc46422856a",
+            "message": "cloudflare reset current path in file manager\n\ncheck also if is post request on set current path because i've got an issue with cloudflare that make a PURGE request like this:\n[REQUEST_METHOD] => PURGE\n[CONTENT_TYPE] => application\/x-www-form-urlencoded; charset=UTF-8\n[CONTENT_LENGTH] =>\n[SCRIPT_NAME] => \/index.php\n[REQUEST_URI] => \/index.php\/gestione\/cms_wysiwyg_images\/contents\/type\/image\/key\/e0b288aa6c56c42688c45a7f0ef4340e\/?isAjax=true\nwithout POST parameters and reset current path on file manager to the root \/ and with the result of we are unable to upload or delete a file.\n\nthis resolve issues with cloudflare at application level but you can fix problem at server level by limit methods on nginix to request uri\ncontains *cms_wysiwyg_images*\nfor examples (not tested):\n\nlocation ~ cms_wysiwyg_images {\n    limit_except POST {\n        deny all;\n    }\n}",
+            "author_name": "Tony",
+            "commiter_name": "GitHub",
+            "parent_hashes": "eb471e10c5bcca7deb2209c7b0f20826e33da4e6"
+        },
+        {
+            "commit_hash": "44550a9da4f66d14bd2ad389fe55c2ad393f2ac7",
+            "message": "Use joinLeft instead of joinInner to fix customers missing from reports.\n\nRefs #41\nRefs #241\nThis commit also reverts db69295f8",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "1a9ba42f2b30cb386997bcf76dfa66214ed4b58d"
+        },
+        {
+            "commit_hash": "27d97d6e8153653e7ee6478a2a2420ac6378e653",
+            "message": "Fixes wrong usage of getSelect()->order() method",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "1a9ba42f2b30cb386997bcf76dfa66214ed4b58d"
+        },
+        {
+            "commit_hash": "cb3e8f0aeaf55c4b2b7a1f9a35ead9fb399aba75",
+            "message": "Fixes hidden checkout config, fixes #259",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "1a9ba42f2b30cb386997bcf76dfa66214ed4b58d"
+        },
+        {
+            "commit_hash": "9f1aaabcac762a95519eb75dc52adf4a90a8faa9",
+            "message": "Add possibility to remove link at sales order and account edit page",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "1a9ba42f2b30cb386997bcf76dfa66214ed4b58d"
+        },
+        {
+            "commit_hash": "8c3ba4eee1497cbf781f9f22e930d0fad1f474f1",
+            "message": "Adds product add to cart event",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "1a9ba42f2b30cb386997bcf76dfa66214ed4b58d"
+        },
+        {
+            "commit_hash": "50dc517e5367f2ebdb210b0f24bed53e9d494aac",
+            "message": "Fixed undefined variable when creating shipping labels",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "3e457ed301b610c2684eefc257af621570167c24"
+        },
+        {
+            "commit_hash": "f7fb37d2c39fd7762fcc88807bc0f2298fd8bd8a",
+            "message": "Fixes system config dependencies for multiselect fields",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "3e457ed301b610c2684eefc257af621570167c24"
+        },
+        {
+            "commit_hash": "92ba41c620154ab5b617554f10cab29d593c5ee5",
+            "message": "Fix slow url_rewrite query on MySQL 5.7\n\nFixes: https:\/\/github.com\/OpenMage\/magento-lts\/issues\/295",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "3e457ed301b610c2684eefc257af621570167c24"
+        },
+        {
+            "commit_hash": "e1d82b21d6650295fd539a09cc4553328bed0219",
+            "message": "fix ssl version\n\n.\/mage list-upgrades\nError:\nlist-upgrades: TCP connection reset by peer\n\nremove specific ssl version, first because version specified TLS v1 is not supported by connect20.magentocommerce.com\nhttps:\/\/www.ssllabs.com\/ssltest\/analyze.html?d=connect20.magentocommerce.com&s=52.3.167.65\n\nand second because server can choise right version byself\ntested on centos\nPHP 5.5.38 (cli) (built: Feb 18 2017 08:04:56)\ncurl 7.54.1 (x86_64-redhat-linux-gnu) libcurl\/7.54.1 NSS\/3.28.4 zlib\/1.2.7 libpsl\/0.7.0 (+libicu\/50.1.2) libssh2\/1.8.0 nghttp2\/1.21.1",
+            "author_name": "Tony",
+            "commiter_name": "GitHub",
+            "parent_hashes": "3e457ed301b610c2684eefc257af621570167c24"
+        },
+        {
+            "commit_hash": "6fa6810c05ef87bd6e12ae304cb07c83d3b6ccb7",
+            "message": "remove leftover 1.9.3.2 package files",
+            "author_name": "Flyingmana",
+            "commiter_name": "Flyingmana",
+            "parent_hashes": "3f3338dd706bc1e5de97af7f975b64ffeebcae3f"
+        },
+        {
+            "commit_hash": "4e7eab322b5325dfa2dc7e88aeb58598aa06cab3",
+            "message": "Set sane default session_cookie_lifetime (3 hours)\n\nRefs colinmollenhour\/Cm_RedisSession#104",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "GitHub",
+            "parent_hashes": "9f9c227111de80a9c3795a7c0a32fe1f4e429cb1"
+        },
+        {
+            "commit_hash": "8c0c067fc2ab1d47ba5077cb026a7cb317a31690",
+            "message": "[FIX] set email as sent only if customer notified\n\nIn all other places where a \"email\" flag is used, email_sent is only set if the flag is true.\n\nPS:\nIn my opinion, the $notifiyCustomer condition is a better solution than assigning $notifiyCustomer directly to \"email_sent\". One can send invoices\/creditmemos multiple times. Just a second run could make it look like an email was never sent (even though it was sent in the first run).",
+            "author_name": "Ingo Fabbri",
+            "commiter_name": "Ingo Fabbri",
+            "parent_hashes": "5dfa133a7d2cec07d669c165aec461675963132f"
+        },
+        {
+            "commit_hash": "d0ff95fb60f3cb34ac94e80dee960b2b478cbf4f",
+            "message": "Typo in category controller",
+            "author_name": "DmitryFursNeklo",
+            "commiter_name": "DmitryFursNeklo",
+            "parent_hashes": "5c381e223be2a88e5349d109f6a35ae2ed2e2165"
+        },
+        {
+            "commit_hash": "5c381e223be2a88e5349d109f6a35ae2ed2e2165",
+            "message": "Typo in category controller",
+            "author_name": "DmitryFursNeklo",
+            "commiter_name": "DmitryFursNeklo",
+            "parent_hashes": "3ab622713c3da810ca18c3983d7e286cfbd785ac"
+        },
+        {
+            "commit_hash": "9f43bd4179573c4b31077c07ec342f7c2cdbb8d4",
+            "message": "Fix SKU chooser widget attributes to select which should be an array.",
+            "author_name": "Vincent MARMIESSE",
+            "commiter_name": "Vincent MARMIESSE",
+            "parent_hashes": "3ab622713c3da810ca18c3983d7e286cfbd785ac"
+        },
+        {
+            "commit_hash": "f0ad82693936010dd264c7d7459d0daf61c97c93",
+            "message": "Typo in Mage_Admin_Model_User",
+            "author_name": "DmitryFursNeklo",
+            "commiter_name": "DmitryFursNeklo",
+            "parent_hashes": "15ab779bdfc66b2521c1dfdba029367c45394064"
+        },
+        {
+            "commit_hash": "15ab779bdfc66b2521c1dfdba029367c45394064",
+            "message": "Typo in Mage_Admin_Model_User",
+            "author_name": "DmitryFursNeklo",
+            "commiter_name": "DmitryFursNeklo",
+            "parent_hashes": "3ab622713c3da810ca18c3983d7e286cfbd785ac"
+        },
+        {
+            "commit_hash": "351f74c7c32f706cea15df19869ca655de615995",
+            "message": "Fix missing imagecreatefromwbmp\n\nFix missing imagecreatefromwbmp from https:\/\/magento.com\/tech-resources\/bug-tracking\/issue\/index\/id\/1504\/",
+            "author_name": "seansan",
+            "commiter_name": "GitHub",
+            "parent_hashes": "15efcd56737ae5e388f30ba6fed767185546d4bc"
+        },
+        {
+            "commit_hash": "34b536a1a68a168de9f65f1374491fa04f9b7ba0",
+            "message": "Possible fix of #282\n\nPossible fix of #282\n\nhttps:\/\/github.com\/OpenMage\/magento-lts\/issues\/282",
+            "author_name": "seansan",
+            "commiter_name": "GitHub",
+            "parent_hashes": "15efcd56737ae5e388f30ba6fed767185546d4bc"
+        },
+        {
+            "commit_hash": "4347c5894439dbc3bdfbfdb5fe842e8116ba4335",
+            "message": "This bug was present begining in 1.7.0.2 and is still present in 1.9.3.3. This patch has been running in production for about 4 years without any issues.\n\nCode was mis-calcuating the qty of simple items to put back in stock for bundle (and configurable) products.\n\nFor example if you had a Bundle X that contained 10 Widgets and the customer ordered 10 of the Bundle X (thus they ordered 100 Widgets), the code previously would multiply twice when issuing a credit memo: When calling $item->getQty() on the Widget product Magento would return 100, since that's how many exist in the order. It would then multiply that by the number of Bundle X in the order (10), and would return 1000 items to the inventory for the Widget, instead of just 100.",
+            "author_name": "Jonathan Laliberte",
+            "commiter_name": "Jonathan Laliberte",
+            "parent_hashes": "15efcd56737ae5e388f30ba6fed767185546d4bc"
+        },
+        {
+            "commit_hash": "b07d012066790d4c52281eb5ba9b1403f0bbc537",
+            "message": "fix localisation whitelist for swiss french\n\nOfficial languages in Switzerland are German, Italian and French.",
+            "author_name": "5p!n5ch",
+            "commiter_name": "GitHub",
+            "parent_hashes": "c501d1ddd81b5540a9a310338c7bc527f3dd457c"
+        },
+        {
+            "commit_hash": "3e7064d0448d2e074e4b9d063929705e751a6db0",
+            "message": "Updated Mage_Catalog_Model_Resource_Url\n\nUpdated Mage_Catalog_Model_Resource_Url, fixed is_active attribute when calling _getCategories()",
+            "author_name": "Wilhelm Ellmann",
+            "commiter_name": "GitHub",
+            "parent_hashes": "2f8627bf9762b9bc2090d1410bf70192efb1210f"
+        },
+        {
+            "commit_hash": "60a1c716272ae5a7d59fa5fff3a0d057a7d137f3",
+            "message": "Removed unreachable js",
+            "author_name": "Michael Thessel",
+            "commiter_name": "Michael Thessel",
+            "parent_hashes": "2f8627bf9762b9bc2090d1410bf70192efb1210f"
+        },
+        {
+            "commit_hash": "2f8627bf9762b9bc2090d1410bf70192efb1210f",
+            "message": "Fixed customer account downloadable list (#242)\n\nTesting github \"Squash and Merge\" method.",
+            "author_name": "sreichel",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "f63b9a04ee39919b038f551240717c9521143e44"
+        },
+        {
+            "commit_hash": "204cb68c788fbb0f9ccb937c720ae807e047526d",
+            "message": "[BUGFIX] Fix switching between customer addresses in the admin panel\n\n* make sure address data is reset for each loop iteration\n* stop setting empty region field to '0' when switching between saved addresses\n\nFixes #193",
+            "author_name": "bob2021",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "21e069719dd331fc50e52118271e7137008d5dcd"
+        },
+        {
+            "commit_hash": "db69295f8238e1fe909b5e43c71abed17817bcc4",
+            "message": "Fixed joinLeft \/ joinInner",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "8016c84af43b33b423e936440d36edaa6e2e4b34"
+        },
+        {
+            "commit_hash": "8016c84af43b33b423e936440d36edaa6e2e4b34",
+            "message": "Fixed abandoned cart report",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "e10a4ebf25bf68622d0dfae09135edd74af19c69"
+        },
+        {
+            "commit_hash": "ebfaf781a04d6a82b00cbaf31d15070a1009de77",
+            "message": "Fixed add poll answer delete button",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "e10a4ebf25bf68622d0dfae09135edd74af19c69"
+        },
+        {
+            "commit_hash": "74db00d3708344c3edad7952aaf5dce69bea6c14",
+            "message": "ensure all db transactions are either committed or rolled back",
+            "author_name": "Rob Wigginton",
+            "commiter_name": "Rob Wigginton",
+            "parent_hashes": "8782d9fa6e83433eb41be61d0c643a2f6cbbb1f2"
+        },
+        {
+            "commit_hash": "24e9ad4e2380e3470c38be30887b87cada2f5dd2",
+            "message": "disable 'ALTER TABLE ... DISABLE KEYS' statements by default, and remove useless calls to useDisableKeys()",
+            "author_name": "Rob Wigginton",
+            "commiter_name": "Rob Wigginton",
+            "parent_hashes": "8782d9fa6e83433eb41be61d0c643a2f6cbbb1f2"
+        },
+        {
+            "commit_hash": "7ccd6b478696dfba581cc7d88254b0133db92ab5",
+            "message": "don't escape console redirection in cron.php",
+            "author_name": "Rob Wigginton",
+            "commiter_name": "Rob Wigginton",
+            "parent_hashes": "fb4fe3a775882b1b6cfbd3b1bedbcffd8eb0afb4"
+        },
+        {
+            "commit_hash": "28013deb404b0b202e09e3e9048cbea6a8f315aa",
+            "message": "fix unserialized data clitch\n\nrefer: http:\/\/magento.stackexchange.com\/questions\/146978\/default-configuration-value-for-serialized-array-settings-is-ignored\/146981#146981",
+            "author_name": "Pablo Benmaman",
+            "commiter_name": "GitHub",
+            "parent_hashes": "fb4fe3a775882b1b6cfbd3b1bedbcffd8eb0afb4"
+        },
+        {
+            "commit_hash": "f0601ff2722349b6a4992a35531cee1c94703f1f",
+            "message": "change variable name\n\n**$databaseFileSotrage** to **$databaseFileStorage**",
+            "author_name": "Alisson J\u00fanior",
+            "commiter_name": "GitHub",
+            "parent_hashes": "e2f86cfd7ed380fbc5b2b7dc6455b4dc06096aa3"
+        },
+        {
+            "commit_hash": "952c8b02b570c1de26471f04f9c5d9671512bf91",
+            "message": "fix: admin group_prices: disable is_percent input\n\nWhen modifying product group prices in admin, is_percent inputs were not\ndisabled as the other inputs leading to annoying validation error.",
+            "author_name": "Olivier Le Brouster",
+            "commiter_name": "Olivier Le Brouster",
+            "parent_hashes": "e2f86cfd7ed380fbc5b2b7dc6455b4dc06096aa3"
+        },
+        {
+            "commit_hash": "170cfbaee735f40a3772b367f621ad4c43cf56c5",
+            "message": "Imported 1.9.3.2 sources",
+            "author_name": "David Robinson",
+            "commiter_name": "David Robinson",
+            "parent_hashes": "e8e78ab6ba1daa9936ffbb1527fb53cbfffc4779"
+        },
+        {
+            "commit_hash": "42e1d510489d068bd764b1ddf975e920cbcc468a",
+            "message": "Fixed the CSS merging data uri bug\n\nSee: https:\/\/github.com\/just-better\/magento1-css-merge-data-uri-fix",
+            "author_name": "Roy Duineveld",
+            "commiter_name": "GitHub",
+            "parent_hashes": "34ab93c1d0daf533985fc1ff5c645b458af4c245"
+        },
+        {
+            "commit_hash": "1ca14c194f1f504843c5abcc72e7d21eb86ddf6c",
+            "message": "Unify string concatenation",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "GitHub",
+            "parent_hashes": "853eaea5f9be1c4da38343e0a18e5f617b78a3c2"
+        },
+        {
+            "commit_hash": "853eaea5f9be1c4da38343e0a18e5f617b78a3c2",
+            "message": "Simple improve of Not valid template file debugging\n\nSimple improve of Not valid template file debugging",
+            "author_name": "seansan",
+            "commiter_name": "GitHub",
+            "parent_hashes": "34ab93c1d0daf533985fc1ff5c645b458af4c245"
+        },
+        {
+            "commit_hash": "75d916298e97497da6a206a85bc04b1ad8acebad",
+            "message": "Added missing table prefix, fixes #162",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "34ab93c1d0daf533985fc1ff5c645b458af4c245"
+        },
+        {
+            "commit_hash": "45ec965bde076ab4d3ba768c0d0988e544cc0583",
+            "message": "Added \"image\" attribute to flat tables",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "34ab93c1d0daf533985fc1ff5c645b458af4c245"
+        },
+        {
+            "commit_hash": "7acd9ebfe1010974e4f62066daac1b5db6a78dc4",
+            "message": "Added missing functionality for getThumbnailUrl",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "34ab93c1d0daf533985fc1ff5c645b458af4c245"
+        },
+        {
+            "commit_hash": "34ab93c1d0daf533985fc1ff5c645b458af4c245",
+            "message": "If add qty field is empty set a default vallue of 1\n\nIf add qty field is empty set a default vallue of 1\n\nSolution is maybe not the most elegant but makes sure we don't overwrite existing values. Only oly if the fields is empty set a default value. A an improvement one could get the value from the mimimal_order_qty settings in settings (this is the way you set a default order qty value in frontend instead of leaving it empty)\n\nplease imagine use entering orders every day via adminhtml and every every time this fields is empty\n\na starting value of 1 already solves 95% of these cases\n\nMajor improvement for us, please accept",
+            "author_name": "seansan",
+            "commiter_name": "Flyingmana",
+            "parent_hashes": "fd14237e88da262e738ddf6e956d586bf0a53a23"
+        },
+        {
+            "commit_hash": "fd14237e88da262e738ddf6e956d586bf0a53a23",
+            "message": "Replace font LinLibertineFont with FONT_HELVETICA: reduces PDf filesizes almost 20x fold\n\nReplace font LinLibertineFont with FONT_HELVETICA: reduces PDf filesizes almost 20x fold\n\nAlso officialy logged in Magento 1.9x stream\n\nAlso HELVETICA is a standard font (instead of loading a lib file)\n\n$font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);",
+            "author_name": "seansan",
+            "commiter_name": "Flyingmana",
+            "parent_hashes": "dd412309ed12fcd77391220e85d65ac96b96e16e"
+        },
+        {
+            "commit_hash": "dd412309ed12fcd77391220e85d65ac96b96e16e",
+            "message": "Fix cms breadcrumb issue",
+            "author_name": "David Robinson",
+            "commiter_name": "Flyingmana",
+            "parent_hashes": "9c4a906b8fb7e6fd0df67b3d44dfc9acdf3a0d98"
+        },
+        {
+            "commit_hash": "cb53d23cdf978591ee3e9f621fbadc5e3d177204",
+            "message": "remove priority change\n\nwhich was also buggy",
+            "author_name": "Flyingmana",
+            "commiter_name": "Flyingmana",
+            "parent_hashes": "fc06172650eea71baf7d79d4de2145a85c560d65"
+        },
+        {
+            "commit_hash": "fc06172650eea71baf7d79d4de2145a85c560d65",
+            "message": "fix tabs",
+            "author_name": "seansan",
+            "commiter_name": "Flyingmana",
+            "parent_hashes": "945013296f4ba697cdd9fa91644a0eff6ba64578"
+        },
+        {
+            "commit_hash": "945013296f4ba697cdd9fa91644a0eff6ba64578",
+            "message": "remove url from homepage in sitemap\n\ntja. works for 99% is important to have right for 100%. But this solution is not sound proof. Still I would advise to accept it. As de base-url is always the homepage ... and I am not sure we would want to create another config option with \"use baseurl als main homepage yes\/no\"",
+            "author_name": "shirtsofholland",
+            "commiter_name": "Flyingmana",
+            "parent_hashes": "9623c92e0a8c114894c0deb1acb7171f0922a1da"
+        },
+        {
+            "commit_hash": "5d1dc1abc188219f129f4a6a914c5bcc76ec964d",
+            "message": "remove priority change\n\nwhich was also buggy",
+            "author_name": "Flyingmana",
+            "commiter_name": "Flyingmana",
+            "parent_hashes": "a8e1eb2772932aa00bafff71013029c90de839a4"
+        },
+        {
+            "commit_hash": "18b8dcd95ee744b2a3d896b53a305deec5f04125",
+            "message": "Fixes 1px line so is whole block\n\nFixes 1px line margin so left and right are not separated",
+            "author_name": "seansan",
+            "commiter_name": "GitHub",
+            "parent_hashes": "9623c92e0a8c114894c0deb1acb7171f0922a1da"
+        },
+        {
+            "commit_hash": "c267026cdc3139851cb279ce3b495b9ffdaf5f38",
+            "message": "Added event for sitemap.xml CMS page generation",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "9623c92e0a8c114894c0deb1acb7171f0922a1da"
+        },
+        {
+            "commit_hash": "f58ca4e80e863deec1daa67d79fee28d02a7a626",
+            "message": "fix tabs",
+            "author_name": "seansan",
+            "commiter_name": "GitHub",
+            "parent_hashes": "4ea75aadf5f05623e52f54512a7797e996202e00"
+        },
+        {
+            "commit_hash": "5da91b248069e84859784d5b483b378123b279b1",
+            "message": "Revert return value to false when file already exists and overwrite is not forced.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "8541ee709138cef62c3175bd280df0f509c2e559"
+        },
+        {
+            "commit_hash": "8541ee709138cef62c3175bd280df0f509c2e559",
+            "message": "Remove pointless use of fgets.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "cb00241fe33df9093071588dc40bb575f6db340d"
+        },
+        {
+            "commit_hash": "cb00241fe33df9093071588dc40bb575f6db340d",
+            "message": "Use different locking techniques for overwrite flag in file storage resource.\n\nUpdated get.php to not overwrite, but rather wait for shared lock before reading to\navoid file-writing stampede or incomplete reads.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "89381484880d36a3c88f88aab8da08a14877ed13"
+        },
+        {
+            "commit_hash": "89381484880d36a3c88f88aab8da08a14877ed13",
+            "message": "Improvements to file storage.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "b52913af2965d9b5cd26c9392d5f73d6563b561a"
+        },
+        {
+            "commit_hash": "bd7b346dbe912f2f25bcd79d2f6f3205e862e635",
+            "message": "Fixes Magento bug 648\n\nRead here\nhttp:\/\/magento.stackexchange.com\/questions\/60743\/undefined-variable-freepackagevalue-in-tablerate-php-on-line-130\/60779#6077\nand here\nhttps:\/\/www.magentocommerce.com\/bug-tracking\/issue\/index\/id\/648",
+            "author_name": "seansan",
+            "commiter_name": "GitHub",
+            "parent_hashes": "7f1a054f33aff3247adda59810df6781f2ff47a2"
+        },
+        {
+            "commit_hash": "ce4b217fc00fa627db9111e51214c92e71b3b520",
+            "message": "Removed old package xml files",
+            "author_name": "David Robinson",
+            "commiter_name": "David Robinson",
+            "parent_hashes": "b52913af2965d9b5cd26c9392d5f73d6563b561a"
+        },
+        {
+            "commit_hash": "c37387a83a29d94c4dd0ca38af044f21c092fdc4",
+            "message": "Fix cms breadcrumb issue",
+            "author_name": "David Robinson",
+            "commiter_name": "David Robinson",
+            "parent_hashes": "b52913af2965d9b5cd26c9392d5f73d6563b561a"
+        },
+        {
+            "commit_hash": "5e2e5d9a2a080aeb9051492743ee32abb76737d7",
+            "message": "Fix shipping street and vat label",
+            "author_name": "Lamamy Bastien",
+            "commiter_name": "Lamamy Bastien",
+            "parent_hashes": "b52913af2965d9b5cd26c9392d5f73d6563b561a"
+        },
+        {
+            "commit_hash": "ac1e3a705c8090eea093576d421c21ec77eb0ed6",
+            "message": "Fix configurable product attribute sorting\n\nOriginal PR: https:\/\/github.com\/OpenMage\/magento-lts\/pull\/72",
+            "author_name": "David Robinson",
+            "commiter_name": "David Robinson",
+            "parent_hashes": "7f1a054f33aff3247adda59810df6781f2ff47a2"
+        },
+        {
+            "commit_hash": "1e6795c852d7c948704b7f13f053daf50a54d1d5",
+            "message": "Spaces",
+            "author_name": "seansan",
+            "commiter_name": "GitHub",
+            "parent_hashes": "99bfeb56fea04f4159e6abfac54af8cf6f24cbfa"
+        },
+        {
+            "commit_hash": "6244f7b2d9a8f42a2213776503cf9fc76a9b43d1",
+            "message": "Use older array syntax",
+            "author_name": "Alex Kirsch",
+            "commiter_name": "GitHub",
+            "parent_hashes": "7804594e6275a948320c71dd46380c9c98a9c6b9"
+        },
+        {
+            "commit_hash": "7804594e6275a948320c71dd46380c9c98a9c6b9",
+            "message": "Fix regression from PR #103. Forgot to use array access by reference...",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "33852b998117da46ad76e401431bbcc11482ba8d"
+        },
+        {
+            "commit_hash": "634ec5c0547b4c5ca9708cdb3d3a215344601aee",
+            "message": "prevent HEADERS ALREADY SENT error",
+            "author_name": "Flyingmana",
+            "commiter_name": "Flyingmana",
+            "parent_hashes": "5aeb0b6673655cdb206436632a73f195cdff8079"
+        },
+        {
+            "commit_hash": "ab84602dfc8d03b257c4c83a53814c9db7c6dea2",
+            "message": "Support models \"getCommentText\" method for group note generation",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "33852b998117da46ad76e401431bbcc11482ba8d"
+        },
+        {
+            "commit_hash": "6c58a74bf5882a1b3ddc5f0157e0f481625bf5e7",
+            "message": "Improve layout cache efficiency by de-duplicating XML strings.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "fba367f99abf22f5bef1a10877b023fbd1d8dda7"
+        },
+        {
+            "commit_hash": "21b0b3abd68fe0d8d19dea1e4024d21777cda123",
+            "message": "Fix query which creates significant deadlock potential.",
+            "author_name": "Colin Mollenhour",
+            "commiter_name": "Colin Mollenhour",
+            "parent_hashes": "fba367f99abf22f5bef1a10877b023fbd1d8dda7"
+        },
+        {
+            "commit_hash": "4ea75aadf5f05623e52f54512a7797e996202e00",
+            "message": "remove url from homepage in sitemap\n\ntja. works for 99% is important to have right for 100%. But this solution is not sound proof. Still I would advise to accept it. As de base-url is always the homepage ... and I am not sure we would want to create another config option with \"use baseurl als main homepage yes\/no\"",
+            "author_name": "shirtsofholland",
+            "commiter_name": "GitHub",
+            "parent_hashes": "fba367f99abf22f5bef1a10877b023fbd1d8dda7"
+        },
+        {
+            "commit_hash": "4896cff8e0479f55ab2a135653816d7b116873e5",
+            "message": "Remove duplicates double quotes",
+            "author_name": "Nikolas Branis",
+            "commiter_name": "Nikolas Branis",
+            "parent_hashes": "cda1ac61e4fd000d8785c31d90afbe2a8b9e1fad"
+        },
+        {
+            "commit_hash": "82e0278fa4eccd40e3dc08878b426abbe8fd6491",
+            "message": "Added alias methods for getOptionArray(), see #65",
+            "author_name": "Sven Reichel",
+            "commiter_name": "Sven Reichel",
+            "parent_hashes": "cda1ac61e4fd000d8785c31d90afbe2a8b9e1fad"
+        },
+        {
+            "commit_hash": "eca06ff800fc1e6aec244646baa6ad598a219113",
+            "message": "added @ on is_readable to suppress warning thrown if $src is file content, not a path (e.g. when image is updated through the REST API) to prevent failure when php server is set to stop on warning like on development server",
+            "author_name": "Dragan Atanasov",
+            "commiter_name": "Dragan Atanasov",
+            "parent_hashes": "5345da52778cc6f5f31938ffd21fccfdd353435c"
+        },
+        {
+            "commit_hash": "750543dd7c2e2b99e5688196cce29b10e2198593",
+            "message": "Fixed tax subtotal calculation order",
+            "author_name": "Jakub Idziak",
+            "commiter_name": "Jakub Idziak",
+            "parent_hashes": "05023c71dcb4831d6eb45145c71b0bd8ced49188"
+        },
+        {
+            "commit_hash": "be888b02b1321979868f111a1057f9fe7e623204",
+            "message": "fix jsonDecode() PHP7 compatibility",
+            "author_name": "Patrick Schnell",
+            "commiter_name": "Patrick Schnell",
+            "parent_hashes": "05023c71dcb4831d6eb45145c71b0bd8ced49188"
+        },
+        {
+            "commit_hash": "a3f28727c4db3acc9d27921f1752c2be7a308b59",
+            "message": "Fix typo in Order model _afterSave() method that results in shipping_address_id attribute always being updated",
+            "author_name": "Kevin Bortnick",
+            "commiter_name": "Kevin Bortnick",
+            "parent_hashes": "05023c71dcb4831d6eb45145c71b0bd8ced49188"
+        },
+        {
+            "commit_hash": "ad52f2fbdbb2af7b2ea9700044596f575f96c94f",
+            "message": "referense = reference",
+            "author_name": "seansan",
+            "commiter_name": "seansan",
+            "parent_hashes": "fef762d6e0fe104218dd41fa7fffb85a6551b8c4"
+        },
+        {
+            "commit_hash": "031f33966eb48d4bbfb36bc75bfab44fa7d0a780",
+            "message": "Fix backgroundColor() \"getting\"\n\nMethod backgroundColor() should behave as a setter\/getter. If no parameters are provided, it should return the image's current background color. However, due to the location of the line that does the setting ($this->_backgroundColor = $value), the image's background color is set regardless of whether or not a parameter was provided to the method.",
+            "author_name": "PatrickCronin",
+            "commiter_name": "PatrickCronin",
+            "parent_hashes": "fef762d6e0fe104218dd41fa7fffb85a6551b8c4"
+        },
+        {
+            "commit_hash": "8ed956f157a8c863f88bc1cad9ce92c77fa9ab31",
+            "message": "Add patch for magento to set cron in the running status, this will stop duplicate jobs showing up in the scheduled status.\n\nhttps:\/\/github.com\/dmanners\/MageCronFix\/commit\/28ca63424faa2a4c89058888c00504d95e1b4dad\n\nNot my code, was discussed in Magento Meta ... and important fix",
+            "author_name": "seansan",
+            "commiter_name": "seansan",
+            "parent_hashes": "fef762d6e0fe104218dd41fa7fffb85a6551b8c4"
+        },
+        {
+            "commit_hash": "99bfeb56fea04f4159e6abfac54af8cf6f24cbfa",
+            "message": "FIX. Enable re-sending again - http:\/\/magento.stackexchange.com\/a\/37690\/78\n\nFIX. Enable re-sending again - http:\/\/magento.stackexchange.com\/a\/37690\/78\n\nIrritating \"new\" feature so order emails cannot be resent ... fixed",
+            "author_name": "seansan",
+            "commiter_name": "seansan",
+            "parent_hashes": "910fae47bf34f3b9b3c81ce44c861f5820b7140f"
+        },
+        {
+            "commit_hash": "a07ad9c65d0b0235bcc19792f0035911f306795d",
+            "message": "PHP 7 support\n\nCredit to Inchoo (https:\/\/github.com\/Inchoo\/Inchoo_PHP7) for the work - this is just a core implementation of the PHP 7 support module.",
+            "author_name": "David Robinson",
+            "commiter_name": "David Robinson",
+            "parent_hashes": "8fd8987c06b4f327f60f2f90978c45c096ae70b6"
+        },
+        {
+            "commit_hash": "c3d69a6c09e861a8dcc52eb14b30cdbd0ea9034b",
+            "message": "[BUG] Fix memory leaks during image upload\n\nThe image upload - especially during mass imports - leads to memory leaks\n due to consumed memory of the image adapter.\n\nThe fix frees the consumed image resources on destruction by calling the\ndestruct() method on the image adapter.\n\nNote: The root cause is in Varien_Image_Adapter_Gd2, a class that keeps\nevery created instance in memory until the PHP script exits. This root-\ncause remains unfixed with this commit.",
+            "author_name": "Tom Klingenberg",
+            "commiter_name": "Tom Klingenberg",
+            "parent_hashes": "28a031f7378f3b92a8f4528f90511cbf5a2b22ee"
+        },
+        {
+            "commit_hash": "5aeb0b6673655cdb206436632a73f195cdff8079",
+            "message": "make directly use of ob_get_clean()",
+            "author_name": "Daniel Fahlke",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "60ff681639fcfd84e609a5a0a5b9e8909d54c37c"
+        },
+        {
+            "commit_hash": "d0dcf24e4646c2863ff2aeb784fca2ed00ee3226",
+            "message": "Fixed reorder isSalable check function \n\nDue to the wrong code indentation. The for loop is wrongly closed.",
+            "author_name": "Sunel Tr",
+            "commiter_name": "Sunel Tr",
+            "parent_hashes": "44511ae0b82c495d27c1cad218e3694ddcda1dfd"
+        },
+        {
+            "commit_hash": "d05ef15cfc08adcf1d12f3c488a921672fa6324a",
+            "message": "opcheckout.js should  iterate over elements, not functions\n\nThis patch make use of the prototype's ``each`` function\nto iterate over dom elements instead of all object properties and functions.\n\nfixes https:\/\/github.com\/OpenMage\/magento-lts\/issues\/42",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "44511ae0b82c495d27c1cad218e3694ddcda1dfd"
+        },
+        {
+            "commit_hash": "9964caddda4c176ccfe0a8d79c55d0a73d88d1c3",
+            "message": "Unescape single quotes in Magento translation files\n\nSignle quotes have to be escaped in PHP when label is wrapped in ''\nhowever in csv it's not needed and causes that some labels are not translated.\n\nFixes https:\/\/github.com\/OpenMage\/magento-lts\/issues\/27",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "44511ae0b82c495d27c1cad218e3694ddcda1dfd"
+        },
+        {
+            "commit_hash": "f9fa51a27631cee11b461988d539ef4ab3bd1d75",
+            "message": "Do not clear product cache when saving new product\n\nResolves https:\/\/github.com\/OpenMage\/magento-lts\/issues\/44",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "44511ae0b82c495d27c1cad218e3694ddcda1dfd"
+        },
+        {
+            "commit_hash": "7a164c4694aa51e4e50b1dd93423e8d2b6bd8e66",
+            "message": "fix middleName issue \n\nFix middleName issue Abandoned Cart Report not showing customers without middleName\nticket here: http:\/\/www.magentocommerce.com\/bug-tracking\/issue\/index\/id\/962",
+            "author_name": "empiricompany",
+            "commiter_name": "empiricompany",
+            "parent_hashes": "44511ae0b82c495d27c1cad218e3694ddcda1dfd"
+        },
+        {
+            "commit_hash": "60ff681639fcfd84e609a5a0a5b9e8909d54c37c",
+            "message": "prevent HEADERS ALREADY SENT error\n\n$image->display() directly outputs the image together with the mimeType header,\ncausing the Mage_Core_Controller_Varien_Front->dispatch() to log an \nHeaders already sent error on sending the actual Response object",
+            "author_name": "Daniel Fahlke",
+            "commiter_name": "Daniel Fahlke",
+            "parent_hashes": "688c043798488d1fddbab398d5b6f9679979605f"
+        },
+        {
+            "commit_hash": "ea68574f2bcac0f14df24267602af618912fa2c4",
+            "message": "Zend_Validate_Hostname with latest gTLD\n\nUpdate Zend_Validate_Hostname to include the latest gTLD",
+            "author_name": "MrGekko",
+            "commiter_name": "MrGekko",
+            "parent_hashes": "688c043798488d1fddbab398d5b6f9679979605f"
+        },
+        {
+            "commit_hash": "5980c3903904bb73390679aa3d0364cc9622040f",
+            "message": "Properly stop profiler in Layout_Update",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "7ef50268d8c04f71953efacbc09a1bbd89d00d77"
+        },
+        {
+            "commit_hash": "c5314f6ed0775674a39fffb8ed12c24b4ef630dc",
+            "message": "Better log msg when template file doesn't exist.\n\nBefore, if Magento was not able to locate a file, and error like this was logged:\n2015-06-09T11:32:35+00:00 ERR (3): Warning: include(): Filename cannot be empty  in app\/code\/core\/Mage\/Core\/Block\/Template.php on line 241\n\nWhich is not very helpful. \nThis change makes Magento log a filename and also fixes the one parameter too much in the Mage::log call.",
+            "author_name": "Tymoteusz Motylewski",
+            "commiter_name": "Tymoteusz Motylewski",
+            "parent_hashes": "7ef50268d8c04f71953efacbc09a1bbd89d00d77"
+        },
+        {
+            "commit_hash": "6e38ce6f4a834fd623bd0c854e9d8bdef51dabfb",
+            "message": "Missing variables and functions added",
+            "author_name": "Syam Mohan",
+            "commiter_name": "Syam Mohan",
+            "parent_hashes": "e2b8244a2c74a726e3882d44ed70ef1aa76bb160"
+        },
+        {
+            "commit_hash": "68ce5a3eeb48bdd3055af02064495cea6b84b896",
+            "message": "Removed replace from composer.json",
+            "author_name": "David Robinson",
+            "commiter_name": "David Robinson",
+            "parent_hashes": "3057e6d26c1bc4650874cc4bee35938b708852c8"
+        },
+        {
+            "commit_hash": "3057e6d26c1bc4650874cc4bee35938b708852c8",
+            "message": "Added replace package",
+            "author_name": "David Robinson",
+            "commiter_name": "David Robinson",
+            "parent_hashes": "f8c21a1e7a2ffa6e9946189cbee7318bb4cec729"
+        },
+        {
+            "commit_hash": "4ab9b9c7b6a930971b58422ed63c6dffcc530332",
+            "message": "Added composer.json",
+            "author_name": "David Robinson",
+            "commiter_name": "David Robinson",
+            "parent_hashes": "3fa52d59e1f2496a9735d34cd0155af3f81410a2"
+        },
+        {
+            "commit_hash": "3e186a48868ed1b8fbf1901e4c7475a7fdc53323",
+            "message": "Revert \"[FIX] return annotation of getScript in helper core\/js\"",
+            "author_name": "Lee Saferite",
+            "commiter_name": "Lee Saferite",
+            "parent_hashes": "7444246ca40f20aff63407771b6406d617d502e6"
+        },
+        {
+            "commit_hash": "d2f9fe2486d97ed1faf17fe747d7256b580d9ddf",
+            "message": "[FIX] return annotation of getScript in helper core\/js",
+            "author_name": "Sebastian Wagner",
+            "commiter_name": "Sebastian Wagner",
+            "parent_hashes": "9dad9ef61da4f088825018c47b1fc91b97b73510"
+        },
+        {
+            "commit_hash": "992f9d2fabbfe774585ef38fafddc8e0547c2ca5",
+            "message": "[FIX] return annotation of getScript in helper core\/js",
+            "author_name": "Sebastian Wagner",
+            "commiter_name": "Sebastian Wagner",
+            "parent_hashes": "053e0b286cbd6d52ac69ca9fd53a3b72c78aca1d"
+        }
+    ],
+    293
+]
