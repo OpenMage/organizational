@@ -2,6 +2,12 @@ A temporary list of Project Goals, till we have one defined by an RFC.
 The Order of Goals is not reflecting their importance.
 
 
+# Provide stability
+
+## In Software
+
+## In direction
+
 # Increase usage of OpenMage
 
 ## increase visibility of the project
