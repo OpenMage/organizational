@@ -13,6 +13,7 @@ If you think someone(or you) are missing, or if you think there is another role 
 | Code Maintainer - OpenMage | ~~~ | ~~~ |
 | Test Engineer | ~~~ | ~~~ |
 | Website Maintainer | ~~~ | ~~~ |
+| Demo Store Maintainer | ~~~ | ~~~ |
 | ~ Blog | ~~~ | ~~~ |
 | ~ Localization - DE (German) | ~~~ | ~~~ |
 | Docker | ~~~ | ~~~ |
@@ -47,6 +48,10 @@ Maintain and extend our Test Suites
 ## Website Maintainer
 
 The ones who take care of the Website. We have a few sub roles here, as some of the responsibilties require very different Skills
+
+## Demo Store Maintainer
+
+Keeping our Demo store up and up to date
 
 ### Blog
 
