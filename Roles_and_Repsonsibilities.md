@@ -13,15 +13,15 @@ If you think someone(or you) are missing, or if you think there is another role 
 | Code Maintainer - OpenMage | ~~~ | ~~~ |
 | Test Engineer | ~~~ | ~~~ |
 | Website Maintainer | ~~~ | ~~~ |
-| Demo Store Maintainer | ~~~ | ~~~ |
+| Demo Store Maintainer | ~~~ | [Tomasz Gregorczyk](https://github.com/Tomasz-Silpion) |
 | ~ Blog | ~~~ | ~~~ |
 | ~ Localization - DE (German) | ~~~ | ~~~ |
 | Docker | ~~~ | ~~~ |
 | Documentation | ~~~ | ~~~ |
-| Security | ~~~ | ~~~ |
+| Security | [Mark Lewis](https://github.com/mark-netalico) | ~~~ |
 | Automation Engineer | ~~~ | ~~~ |
-| Partner Management | ~~~ | ~~~ |
-| Public Relations | ~~~ | ~~~ |
+| Partner Management | ~~~ | in parts [Tomasz Gregorczyk](https://github.com/Tomasz-Silpion) |
+| Public Relations | ~~~ | in parts [Tomasz Gregorczyk](https://github.com/Tomasz-Silpion) |
 | Project Organizer / Manager | ~~~ | ~~~ |
 
 
