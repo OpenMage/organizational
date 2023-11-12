@@ -15,7 +15,7 @@ Creation of new Releases is one of the most important tasks for a software to ma
 The time needed for Releases might differ, so the actual payout might in parts be higher.
 It may also be relevant, when security releases are needed.
 
-x,000$ per Quarter
+4,000$ per Quarter
 
 ### Process / Review / Solve reported Security risks
 
@@ -41,6 +41,11 @@ The results will still be usefull, but exeed what is possible for most volunteer
 
 8,000$ per Quarter
 
+### maintaining the organisatorical and transparency information
+
+serving the transparency needed will be an important part when money is involved. But its also something which takes effort and time.
+
+2.000$ per Quarter
 
 ## Level 3
 
@@ -51,6 +56,16 @@ The way we would do or organize it is still open and depends on the People alrea
 The Sum is not what we will pay directly, but what we should reserve as Budget, and might likely be used more flexible.
 
 20,000$ per quarter
+
+### Technical writing for our Documentation
+
+5.000$ per quarter
+
+
+## Onetime Projects which might need founding
+
+
+//placeholder//
 
 
 # Rough yearly Goals for Each level
