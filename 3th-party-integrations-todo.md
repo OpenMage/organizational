@@ -22,6 +22,13 @@ seems to be mostly about fetching Customer and Order Data to display in their He
 
 ### Facebook
 
+### Zapier
+
+https://zapier.com/apps/liveagent/integrations/magento-v2?utm_medium=referral&utm_source=liveagent&utm_campaign=integration
+
+https://zapier.com/apps/magento/integrations
+
+Seems to still support Magento 1
 
 ## possible approaches and things to make reestablishing this integrations easier
 
