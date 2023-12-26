@@ -1,4 +1,4 @@
-As more and more places stop support for Magento2 integrations, there is a plan needed on how to restore some of them to stay competitive.
+As more and more places stop support for Magento1 integrations in favor of M2, there is a plan needed on how to restore some of them to stay competitive.
 
 
 
